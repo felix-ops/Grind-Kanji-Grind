@@ -1,1033 +1,964 @@
-﻿n1,n1
-1,1
-2,2
-3,3
-4,4
-5,5
-6,6
-7,7
-8,8
-9,9
-10,10
-11,11
-12,12
-13,13
-14,14
-15,15
-16,16
-17,17
-18,18
-19,19
-20,20
-21,21
-22,22
-23,23
-24,24
-25,25
-26,26
-27,27
-28,28
-29,29
-30,30
-31,31
-32,32
-33,33
-34,34
-35,35
-36,36
-37,37
-38,38
-39,39
-40,40
-41,41
-42,42
-43,43
-44,44
-45,45
-46,46
-47,47
-48,48
-49,49
-50,50
-51,51
-52,52
-53,53
-54,54
-55,55
-56,56
-57,57
-58,58
-59,59
-60,60
-61,61
-62,62
-63,63
-64,64
-65,65
-66,66
-67,67
-68,68
-69,69
-70,70
-71,71
-72,72
-73,73
-74,74
-75,75
-76,76
-77,77
-78,78
-79,79
-80,80
-81,81
-82,82
-83,83
-84,84
-85,85
-86,86
-87,87
-88,88
-89,89
-90,90
-91,91
-92,92
-93,93
-94,94
-95,95
-96,96
-97,97
-98,98
-99,99
-100,100
-101,101
-102,102
-103,103
-104,104
-105,105
-106,106
-107,107
-108,108
-109,109
-110,110
-111,111
-112,112
-113,113
-114,114
-115,115
-116,116
-117,117
-118,118
-119,119
-120,120
-121,121
-122,122
-123,123
-124,124
-125,125
-126,126
-127,127
-128,128
-129,129
-130,130
-131,131
-132,132
-133,133
-134,134
-135,135
-136,136
-137,137
-138,138
-139,139
-140,140
-141,141
-142,142
-143,143
-144,144
-145,145
-146,146
-147,147
-148,148
-149,149
-150,150
-151,151
-152,152
-153,153
-154,154
-155,155
-156,156
-157,157
-158,158
-159,159
-160,160
-161,161
-162,162
-163,163
-164,164
-165,165
-166,166
-167,167
-168,168
-169,169
-170,170
-171,171
-172,172
-173,173
-174,174
-175,175
-176,176
-177,177
-178,178
-179,179
-180,180
-181,181
-182,182
-183,183
-184,184
-185,185
-186,186
-187,187
-188,188
-189,189
-190,190
-191,191
-192,192
-193,193
-194,194
-195,195
-196,196
-197,197
-198,198
-199,199
-200,200
-201,201
-202,202
-203,203
-204,204
-205,205
-206,206
-207,207
-208,208
-209,209
-210,210
-211,211
-212,212
-213,213
-214,214
-215,215
-216,216
-217,217
-218,218
-219,219
-220,220
-221,221
-222,222
-223,223
-224,224
-225,225
-226,226
-227,227
-228,228
-229,229
-230,230
-231,231
-232,232
-233,233
-234,234
-235,235
-236,236
-237,237
-238,238
-239,239
-240,240
-241,241
-242,242
-243,243
-244,244
-245,245
-246,246
-247,247
-248,248
-249,249
-250,250
-251,251
-252,252
-253,253
-254,254
-255,255
-256,256
-257,257
-258,258
-259,259
-260,260
-261,261
-262,262
-263,263
-264,264
-265,265
-266,266
-267,267
-268,268
-269,269
-270,270
-271,271
-272,272
-273,273
-274,274
-275,275
-276,276
-277,277
-278,278
-279,279
-280,280
-281,281
-282,282
-283,283
-284,284
-285,285
-286,286
-287,287
-288,288
-289,289
-290,290
-291,291
-292,292
-293,293
-294,294
-295,295
-296,296
-297,297
-298,298
-299,299
-300,300
-301,301
-302,302
-303,303
-304,304
-305,305
-306,306
-307,307
-308,308
-309,309
-310,310
-311,311
-312,312
-313,313
-314,314
-315,315
-316,316
-317,317
-318,318
-319,319
-320,320
-321,321
-322,322
-323,323
-324,324
-325,325
-326,326
-327,327
-328,328
-329,329
-330,330
-331,331
-332,332
-333,333
-334,334
-335,335
-336,336
-337,337
-338,338
-339,339
-340,340
-341,341
-342,342
-343,343
-344,344
-345,345
-346,346
-347,347
-348,348
-349,349
-350,350
-351,351
-352,352
-353,353
-354,354
-355,355
-356,356
-357,357
-358,358
-359,359
-360,360
-361,361
-362,362
-363,363
-364,364
-365,365
-366,366
-367,367
-368,368
-369,369
-370,370
-371,371
-372,372
-373,373
-374,374
-375,375
-376,376
-377,377
-378,378
-379,379
-380,380
-381,381
-382,382
-383,383
-384,384
-385,385
-386,386
-387,387
-388,388
-389,389
-390,390
-391,391
-392,392
-393,393
-394,394
-395,395
-396,396
-397,397
-398,398
-399,399
-400,400
-401,401
-402,402
-403,403
-404,404
-405,405
-406,406
-407,407
-408,408
-409,409
-410,410
-411,411
-412,412
-413,413
-414,414
-415,415
-416,416
-417,417
-418,418
-419,419
-420,420
-421,421
-422,422
-423,423
-424,424
-425,425
-426,426
-427,427
-428,428
-429,429
-430,430
-431,431
-432,432
-433,433
-434,434
-435,435
-436,436
-437,437
-438,438
-439,439
-440,440
-441,441
-442,442
-443,443
-444,444
-445,445
-446,446
-447,447
-448,448
-449,449
-450,450
-451,451
-452,452
-453,453
-454,454
-455,455
-456,456
-457,457
-458,458
-459,459
-460,460
-461,461
-462,462
-463,463
-464,464
-465,465
-466,466
-467,467
-468,468
-469,469
-470,470
-471,471
-472,472
-473,473
-474,474
-475,475
-476,476
-477,477
-478,478
-479,479
-480,480
-481,481
-482,482
-483,483
-484,484
-485,485
-486,486
-487,487
-488,488
-489,489
-490,490
-491,491
-492,492
-493,493
-494,494
-495,495
-496,496
-497,497
-498,498
-499,499
-500,500
-501,501
-502,502
-503,503
-504,504
-505,505
-506,506
-507,507
-508,508
-509,509
-510,510
-511,511
-512,512
-513,513
-514,514
-515,515
-516,516
-517,517
-518,518
-519,519
-520,520
-521,521
-522,522
-523,523
-524,524
-525,525
-526,526
-527,527
-528,528
-529,529
-530,530
-531,531
-532,532
-533,533
-534,534
-535,535
-536,536
-537,537
-538,538
-539,539
-540,540
-541,541
-542,542
-543,543
-544,544
-545,545
-546,546
-547,547
-548,548
-549,549
-550,550
-551,551
-552,552
-553,553
-554,554
-555,555
-556,556
-557,557
-558,558
-559,559
-560,560
-561,561
-562,562
-563,563
-564,564
-565,565
-566,566
-567,567
-568,568
-569,569
-570,570
-571,571
-572,572
-573,573
-574,574
-575,575
-576,576
-577,577
-578,578
-579,579
-580,580
-581,581
-582,582
-583,583
-584,584
-585,585
-586,586
-587,587
-588,588
-589,589
-590,590
-591,591
-592,592
-593,593
-594,594
-595,595
-596,596
-597,597
-598,598
-599,599
-600,600
-601,601
-602,602
-603,603
-604,604
-605,605
-606,606
-607,607
-608,608
-609,609
-610,610
-611,611
-612,612
-613,613
-614,614
-615,615
-616,616
-617,617
-618,618
-619,619
-620,620
-621,621
-622,622
-623,623
-624,624
-625,625
-626,626
-627,627
-628,628
-629,629
-630,630
-631,631
-632,632
-633,633
-634,634
-635,635
-636,636
-637,637
-638,638
-639,639
-640,640
-641,641
-642,642
-643,643
-644,644
-645,645
-646,646
-647,647
-648,648
-649,649
-650,650
-651,651
-652,652
-653,653
-654,654
-655,655
-656,656
-657,657
-658,658
-659,659
-660,660
-661,661
-662,662
-663,663
-664,664
-665,665
-666,666
-667,667
-668,668
-669,669
-670,670
-671,671
-672,672
-673,673
-674,674
-675,675
-676,676
-677,677
-678,678
-679,679
-680,680
-681,681
-682,682
-683,683
-684,684
-685,685
-686,686
-687,687
-688,688
-689,689
-690,690
-691,691
-692,692
-693,693
-694,694
-695,695
-696,696
-697,697
-698,698
-699,699
-700,700
-701,701
-702,702
-703,703
-704,704
-705,705
-706,706
-707,707
-708,708
-709,709
-710,710
-711,711
-712,712
-713,713
-714,714
-715,715
-716,716
-717,717
-718,718
-719,719
-720,720
-721,721
-722,722
-723,723
-724,724
-725,725
-726,726
-727,727
-728,728
-729,729
-730,730
-731,731
-732,732
-733,733
-734,734
-735,735
-736,736
-737,737
-738,738
-739,739
-740,740
-741,741
-742,742
-743,743
-744,744
-745,745
-746,746
-747,747
-748,748
-749,749
-750,750
-751,751
-752,752
-753,753
-754,754
-755,755
-756,756
-757,757
-758,758
-759,759
-760,760
-761,761
-762,762
-763,763
-764,764
-765,765
-766,766
-767,767
-768,768
-769,769
-770,770
-771,771
-772,772
-773,773
-774,774
-775,775
-776,776
-777,777
-778,778
-779,779
-780,780
-781,781
-782,782
-783,783
-784,784
-785,785
-786,786
-787,787
-788,788
-789,789
-790,790
-791,791
-792,792
-793,793
-794,794
-795,795
-796,796
-797,797
-798,798
-799,799
-800,800
-801,801
-802,802
-803,803
-804,804
-805,805
-806,806
-807,807
-808,808
-809,809
-810,810
-811,811
-812,812
-813,813
-814,814
-815,815
-816,816
-817,817
-818,818
-819,819
-820,820
-821,821
-822,822
-823,823
-824,824
-825,825
-826,826
-827,827
-828,828
-829,829
-830,830
-831,831
-832,832
-833,833
-834,834
-835,835
-836,836
-837,837
-838,838
-839,839
-840,840
-841,841
-842,842
-843,843
-844,844
-845,845
-846,846
-847,847
-848,848
-849,849
-850,850
-851,851
-852,852
-853,853
-854,854
-855,855
-856,856
-857,857
-858,858
-859,859
-860,860
-861,861
-862,862
-863,863
-864,864
-865,865
-866,866
-867,867
-868,868
-869,869
-870,870
-871,871
-872,872
-873,873
-874,874
-875,875
-876,876
-877,877
-878,878
-879,879
-880,880
-881,881
-882,882
-883,883
-884,884
-885,885
-886,886
-887,887
-888,888
-889,889
-890,890
-891,891
-892,892
-893,893
-894,894
-895,895
-896,896
-897,897
-898,898
-899,899
-900,900
-901,901
-902,902
-903,903
-904,904
-905,905
-906,906
-907,907
-908,908
-909,909
-910,910
-911,911
-912,912
-913,913
-914,914
-915,915
-916,916
-917,917
-918,918
-919,919
-920,920
-921,921
-922,922
-923,923
-924,924
-925,925
-926,926
-927,927
-928,928
-929,929
-930,930
-931,931
-932,932
-933,933
-934,934
-935,935
-936,936
-937,937
-938,938
-939,939
-940,940
-941,941
-942,942
-943,943
-944,944
-945,945
-946,946
-947,947
-948,948
-949,949
-950,950
-951,951
-952,952
-953,953
-954,954
-955,955
-956,956
-957,957
-958,958
-959,959
-960,960
-961,961
-962,962
-963,963
-964,964
-965,965
-966,966
-967,967
-968,968
-969,969
-970,970
-971,971
-972,972
-973,973
-974,974
-975,975
-976,976
-977,977
-978,978
-979,979
-980,980
-981,981
-982,982
-983,983
-984,984
-985,985
-986,986
-987,987
-988,988
-989,989
-990,990
-991,991
-992,992
-993,993
-994,994
-995,995
-996,996
-997,997
-998,998
-999,999
-1000,1000
-1001,1001
-1002,1002
-1003,1003
-1004,1004
-1005,1005
-1006,1006
-1007,1007
-1008,1008
-1009,1009
-1010,1010
-1011,1011
-1012,1012
-1013,1013
-1014,1014
-1015,1015
-1016,1016
-1017,1017
-1018,1018
-1019,1019
-1020,1020
-1021,1021
-1022,1022
-1023,1023
-1024,1024
-1025,1025
-1026,1026
-1027,1027
-1028,1028
-1029,1029
-1030,1030
-1031,1031
-1032,1032
+﻿潔,Meaning
+壌,soil
+亜,sub-
+矢,arrow
+嬢,unmarried woman
+洞,hollow
+柄,pattern
+柳,willow (any tree of genus Salix)
+哀,pity
+陥,pitfall
+旨,principle
+錠,lock
+胴,trunk
+陛,Your Majesty
+譲,to hand over
+勘,perception
+醸,brewing
+塀,wall
+竜,dragon (esp. a Chinese dragon)
+患,patient
+至,to ...
+幣,staff with plaited paper streamers
+貫,"crosspiece (between pillars, etc.)"
+汰,to shake
+弊,bad habit
+隆,Takashi
+握,handshake
+硫,sulfur (S)
+喚,to call out (to)
+妥,compromise
+扱,to deal with (a person)
+堪,intolerable
+殖,to increase
+倹,economizing
+飾,to decorate
+堕,to fall
+瞳,pupil (of the eye)
+虜,captive
+嵐,storm
+敢,"purposely (of something needless, unexpected or seemingly counterproductive, etc.)"
+兼,cum (e.g. bedroom-cum-study)
+惰,force of habit
+峠,(mountain) pass
+慮,to consider carefully
+棺,coffin
+剣,"sword (esp. a large, double-edged one)"
+嘱,having great hopes for (someone's future)
+駄,poor
+匿,shelter
+癖,habit (usu. a bad one)
+款,title
+拳,fist
+織,weave
+祉,prosperity
+閑,spare time
+肢,foot
+辱,shame
+督,urge
+勧,to recommend (someone to do)
+姿,figure
+耐,-proof
+徳,virtue
+寛,relaxed
+圏,sphere
+篤,thick
+猟,hunting
+幹,(tree) trunk
+堅,strength
+怠,tedious
+陵,imperial mausoleum
+検,"inspection (e.g. customs, factory)"
+施,institution
+胎,womb
+独,Germany
+偏,left-hand radical of a character
+嫌,disliking
+遍,number of times
+僚,consort ship
+献,menu
+威,power
+絹,silk
+泰,Thailand
+凸,convex
+弁,speech
+寮,hostel
+為,good
+遣,"to use (a tool, method, etc.)"
+歓,joy
+視,viewing as ...
+侵,invasion
+瞭,obvious
+監,special Nara-period administrative division for areas containing a detached palace (Yoshino and Izumi)
+憲,constitution
+紫,purple
+逮,arrest
+屯,"ton (esp. a metric ton, i.e. 1000 kg)"
+糧,food
+尉,inspector (third highest of the four administrative ranks of the ritsuryō system)
+緩,loose
+津,Tsu (city in Mie)
+豚,pig (Sus scrofa domesticus)
+憾,resentment
+謙,modest
+還,to return
+嗣,succession
+唇,lip
+隊,party
+繭,cocoon
+娠,Meaning not found
+滞,stay
+厘,one-hundredth
+顕,exposure
+詩,poem
+振,swing
+態,appearance
+舗,shop
+倫,ethics
+浸,to soak (in)
+懸,credit
+飼,to keep (a pet or other animal)
+那,Naraka
+隣,next (to)
+奈,Chinese quince (Pseudocydonia sinensis)
+墓,grave
+臨,temporary
+艦,warship
+幻,phantom
+雌,"female (animal, plant)"
+慕,to yearn for
+瑠,lapis lazuli
+維,this
+鑑,model
+玄,entrance
+紳,gentleman
+第,prefix for forming ordinal numbers
+梨,nashi (esp. Pyrus pyrifolia)
+慰,to comfort
+賜,gift
+簿,journalization (accounts)
+累,trouble
+遺,to remain
+弦,bowstring
+諮,to consult with
+滝,waterfall
+塁,fort
+緯,weft
+診,medical examination
+択,"counter for choices, options, etc."
+芳,"aromatic (roasted beans, roasted tea, etc.)"
+慎,careful
+沢,mountain stream
+邦,country
+眼,eye
+卓,table
+奉,service
+壱,one
+頑,obstinate
+審,judgement
+拓,to open (e.g. path)
+尼,Buddhist nun
+励,to encourage
+逸,very
+源,source (of a river)
+託,to entrust (someone) with
+弐,two
+厳,strict
+薪,piece(s) of firewood (esp. chopped or split from logs)
+芋,tuber
+企,enterprise
+己,I
+諾,agreement
+鈴,bell (often globular)
+伎,technique
+濁,to become muddy
+虹,rainbow
+泡,bubble
+侍,warrior (esp. of military retainers of daimyos in the Edo period)
+刃,edge (of a knife or sword)
+但,ordinary
+胞,spore
+霊,soul
+仁,benevolence (esp. as a virtue of Confucianism)
+俸,salary
+隷,"clerical script (ancient, highly angular style of kanji)"
+尽,last day (of the month)
+脱,"de- (indicating reversal, removal, etc.)"
+倣,to imitate
+姻,in-law
+岐,the public
+迅,quick
+奪,to take (by force)
+尿,urine
+峰,peak
+麗,Uruha (musician)
+虎,tiger (Panthera tigris)
+滋,to grow thickly
+甚,painful
+棚,shelf
+砲,gun
+暦,calendar
+忌,mourning
+孤,orphan
+慈,mercy
+陣,battle formation
+妊,pregnancy
+崩,to collapse
+汽,train (esp. long distance train)
+弧,arc
+尋,fathom
+丹,red earth (i.e. containing cinnabar or minium)
+忍,endurance
+陰,shade
+奇,strange
+磁,magnet
+旦,"master (of a house, shop, etc.)"
+劣,sub-
+須,for a moment
+寧,rather
+烈,violent
+隠,to hide
+裂,to tear
+韻,rhyme
+紀,period
+鹿,"deer (esp. the sika deer, Cervus nippon)"
+飽,to get tired of
+軌,rut
+胆,gallbladder
+褒,to praise
+既,already
+垂,sauce (esp. soy or mirin-based dipping sauce)
+縫,to sew
+廉,grounds
+誇,pride
+軸,axis
+炊,"to cook (grains, e.g. rice)"
+淡,fresh water (i.e. not salt water)
+粘,stickiness
+鼓,hand drum
+帥,director of the Dazaifu
+乏,meagre
+錬,to knead
+唄,song
+飢,famine
+粋,chic
+嘆,sigh
+呂,bass range (in Japanese music)
+鬼,ogre
+顧,to look back on (the past)
+衰,to become weak
+端,end (e.g. of street)
+納,consent
+炉,hearth
+畝,ridge (in field)
+推,recommendation
+妨,to disturb
+浦,inlet
+疾,to run
+酔,to get drunk
+誕,birthday
+執,attachment
+遂,end
+鍛,to forge
+露,dew
+呉,"Wu (region in China, south of the lower Yangtze)"
+睡,sleep
+房,"tuft (of hair, threads, etc.)"
+亀,tortoise
+穂,ear (of a cereal plant)
+把,bundle
+肪,Meaning not found
+娯,enjoyable
+漆,seven
+随,essays
+某,certain
+幾,some
+悟,to perceive
+髄,medulla
+派,clique
+冒,adventure
+郎,nth son
+揮,volatilization
+碁,go (board game)
+枢,pivot hinge (using extensions on the top and bottom of a door that fit into cavities in the frame)
+弾,ball
+剖,autopsy
+朗,cheerful
+芝,lawn
+崇,worship
+暖,warming
+覇,supremacy (over a nation)
+紡,spinning (textiles)
+浪,wave
+棋,go (board game)
+廊,corridor
+詠,recitation (of a poem)
+貴,your
+護,to protect
+据,to sit
+壇,platform
+婆,old woman
+傍,near
+楼,tower
+影,shadow
+棄,abstention (from voting)
+杉,Japanese cedar (Cryptomeria japonica)
+漏,to let leak
+舎,hut
+衛,(natural) satellite
+旗,flag
+寸,sun (approx. 3 cm)
+器,bowl
+射,archery
+瀬,shallows
+疫,epidemic
+孔,hole
+是,this
+肺,lung
+益,benefit
+輝,to shine
+功,merit
+赦,pardon
+井,well
+致,to do
+俳,actor
+膨,to expand
+巧,skilfulness
+斜,slanting
+謀,plan
+騎,counter for horsemen
+煮,simmered with
+痴,foolish thing
+排,anti-
+悦,self-satisfaction
+甲,armor
+遮,to interrupt
+稚,youth
+賄,bribe
+宜,truly
+謝,to apologize
+廃,abolition
+謁,"audience (with a superior, e.g. nobility)"
+偽,imitation
+邪,wicked
+輩,comrade
+朴,Japanese hackberry (Celtis sinensis var. japonica)
+惑,klesha
+閲,inspection (esp. of a document)
+欺,to trick
+蛇,snake
+牧,pasture
+枠,frame
+義,morality
+后,after
+尺,shaku (unit of distance approximately equal to 30.3 cm)
+睦,to be harmonious
+逐,to chase
+梅,Japanese apricot (Prunus mume)
+僕,I
+沿,coast
+儀,ceremony
+江,inlet
+酌,pouring alcohol
+征,ladder
+蓄,to store
+培,to cultivate
+墨,sumi
+炎,flame
+戯,pleasantry
+釈,release
+陪,jury
+撲,to hit
+擬,pseudo-
+爵,"jue (ancient 3-legged Chinese wine pitcher, usu. made of bronze)"
+秩,order
+媒,matchmaker
+没,death
+宴,party
+犠,sacrifice
+坑,pit (esp. of a mine)
+斉,Qi (kingdom in China during the Spring and Autumn Period and the Period of the Warring States)
+窒,suffocation
+媛,young lady of noble birth
+孝,filial piety
+賠,compensation
+堀,moat
+援,to save
+菊,chrysanthemum (Chrysanthemum morifolium)
+抗,anti-
+寂,patina
+吉,good fortune (esp. omikuji fortune-telling result)
+攻,attack
+牲,"offering (to the gods, emperor, etc.)"
+嫡,legitimate birth
+伯,count
+奔,to run
+拍,beat
+翻,han
+猿,"monkey (esp. the Japanese macaque, Macaca fuscata)"
+凡,about
+却,very
+朱,red
+逝,to go
+迫,stage elevator
+盆,tray
+鉛,lead (Pb)
+拘,to be affected
+沖,open sea
+麻,cannabis (Cannabis sativa)
+脚,foot
+狩,hunting
+盛,serving (of food)
+宙,space
+舶,large ship
+摩,friction
+侯,marquis
+婿,husband
+忠,loyalty
+博,doctor
+縁,rim
+虐,to ill-treat
+殊,difference (from one another)
+抽,drawer
+魔,demon
+艶,gloss
+恒,usual state of things
+珠,ball
+洪,Hungary
+聖,Saint
+漠,vague
+及,and
+皇,divine
+誠,truth
+縛,tying up
+凹,concave
+弓,bow (weapon)
+衷,innermost feelings
+丘,hill
+趣,meaning
+製,make
+誓,to swear
+鋳,casting
+幕,curtain
+往,to go
+膜,membrane
+請,request
+旺,prosperous
+朽,to rot
+又,again
+需,demand
+丁,counter for leaves in a book (esp. one with traditional Japanese-style binding)
+鉢,bowl
+殴,to strike
+儒,Confucianism
+弔,message of condolence
+抹,erasure
+桜,cherry tree
+貢,tribute
+樹,tree
+翁,old man
+泣,to cry
+斥,to step back
+伐,to quarry
+囚,imprisonment
+慢,chronic (illness)
+級,(school) grade
+罰,punishment
+漫,cartoon
+岡,hill
+糾,to ascertain
+控,to be temperate in
+挑,challenge
+閥,clique
+宮,shrine
+秀,preeminence
+析,wooden clappers (signalling the beginning or end of a performance)
+帳,curtain
+救,relief
+魅,charm
+憶,to memorize
+宗,principle
+彫,carving
+岬,cape (on coast)
+隻,counter for ships
+眺,to look at
+密,dense
+虞,fear
+惜,alas
+釣,fishing
+帆,sail
+乙,"(the) second (party, rank, etc.)"
+窮,ultimate
+臭,-smell
+脈,pulse
+絞,death by hanging (punishment in the ritsuryō system)
+伴,companion
+妙,strange
+卸,wholesale
+項,clause
+跡,trace
+溝,ditch
+恩,favour
+矛,long-handled Chinese spear
+拒,to defend against
+籍,one's family register
+腸,guts
+穏,calm
+拠,grounds
+綱,rope
+跳,to fly
+挙,action
+酵,enzyme
+就,finding employment
+徴,sign
+班,group
+虚,sky
+稿,manuscript
+衆,great numbers (of people)
+拙,poor
+畔,(in the) neighbourhood
+霧,fog
+興,interest
+窃,secret
+潮,tide
+距,tubular nectary
+衡,yoke
+愁,grief
+澄,"to become clear (water, air, etc.)"
+鋼,steel
+酬,to be repaid
+醜,ugly
+聴,to hear
+購,purchase
+摂,intake (e.g. of salt)
+懲,to learn by experience
+搬,transportation
+凶,bad luck
+襲,pile
+煩,trouble
+佳,beautiful
+勅,imperial decree
+頒,to divide (into)
+盟,alliance
+汁,juice
+舌,tongue
+範,example
+銘,inscription
+狂,(some type of) enthusiast
+拷,torture
+充,enough
+繁,complexity
+剛,strong
+藩,han (estate of a daimyo in the Edo and early Meiji periods)
+滅,absurd
+享,to receive
+朕,We
+免,dismissal
+豪,Australia
+仙,cent (monetary unit)
+陳,Chen (ancient Chinese state; approx. 1045-479 BCE)
+架,rack
+克,nicely
+従,lesser (of equal court ranks)
+蛮,foolhardiness
+渋,kakishibu
+鎮,a weight
+盤,plate
+峡,gorge
+銃,gun
+宣,imperial order
+茂,to grow thickly
+獣,beast
+椎,any beech tree of genus Castanopsis
+模,wooden printing block
+華,flower
+狭,narrow
+縦,the vertical
+墜,to fall
+妃,princess
+叔,aunt
+妄,delusion
+恭,respect
+穀,grain
+盲,blindness
+渦,whirlpool
+酷,severe
+染,dyeing
+塚,mound
+耗,Meaning not found
+脅,threat
+獄,jail
+淑,graceful
+扇,folding fan
+漬,to soak (in)
+披,announcement
+猛,greatly energetic
+嫁,bride
+粛,solemn
+栓,stopper
+坪,tsubo
+肥,manure
+網,net
+暇,spare time
+駒,"piece (in shogi, chess, etc.)"
+縮,wearing armour (armor)
+旋,melody
+禍,disaster
+郷,countryside
+塾,cram school
+鶴,"crane (any bird of the family Gruidae, esp. the red-crowned crane, Grus japonensis)"
+卑,cowardly
+黙,silence
+熟,deeply
+寡,widow
+呈,to present
+紋,(family) crest
+矯,"correction (of a fault, defect, flaw, etc.)"
+廷,inside the court
+秘,secret
+箇,counter for the ichi-ni-san counting system (usu. directly preceding the item being counted)
+鏡,mirror
+昆,insect
+冶,melting
+稼,to earn (income)
+恨,Han (cultural)
+俊,excellence
+響,echo
+践,to step on
+扉,door
+蚊,mosquito
+驚,wonder
+瞬,moment
+抵,resistance
+弥,more and more
+仰,to look up (at)
+旬,"season (for fruit, seafood, etc.)"
+銭,sen (hundredth of a yen)
+邸,residence
+碑,stone monument bearing an inscription (esp. memorial for future generations)
+厄,misfortune
+暁,dawn
+巡,"counter for tours, cycles, rounds, circuits, etc."
+潜,diving
+亭,arbor
+罷,to cease
+我,I
+紺,navy blue
+盾,shield
+貞,firm adherence to one's principles
+避,to avoid (physical contact with)
+凝,muscle stiffness (esp. in shoulders)
+魂,soul
+准,semi-
+遷,to move (house)
+帝,emperor (of Japan)
+尾,tail (of an animal)
+訳,"conclusion from reasoning, judgement or calculation based on something read or heard"
+芽,sprout
+墾,new rice field
+殉,martyrdom
+訂,correction
+眉,eyebrow
+賀,congratulation
+懇,kind
+薦,woven straw mat (orig. made of wild rice leaves)
+躍,desperate
+雅,refinement
+循,circulation
+繊,daikon julienne
+逓,"communications (e.g. post, telegraph)"
+餓,to starve
+佐,to save
+鮮,vivid
+微,minuteness
+沙,sand
+偵,scouting
+斤,kin
+潤,moisture
+堤,bank
+遵,"to obey (an order, law, etc.)"
+提,ceremonial sake decanter with a spout and semicircular handle
+愉,enjoyable
+唆,to instigate
+諭,"to make (someone) understand (a fault, mistake, etc.)"
+禅,dhyana (profound meditation)
+艇,(small) boat
+戒,admonition
+菌,fungus
+詐,fraud
+漸,a little
+締,to tie
+泌,keenly
+癒,to heal
+鎖,chain
+唯,ordinary
+怪,mystery
+琴,koto (13-stringed Japanese zither)
+庶,common people
+繕,to mend
+姫,young lady of noble birth
+拐,to carry off
+筋,muscle
+狙,"to aim at (with a weapon, etc.)"
+悔,"frustrated (over a failure, humiliation or injustice)"
+阻,obstruction
+笛,flute
+摘,to pinch
+幽,ghost
+緊,to be shut
+災,calamity
+租,rice tax (ritsuryō system)
+俵,straw bag
+悠,quiet
+錦,brocade
+素,origin
+票,vote
+謹,to be careful
+采,dice
+如,like
+措,measure
+敵,opponent
+湧,to well (up)
+襟,collar
+砕,to break (into pieces)
+粗,almost
+漂,to drift
+猶,still
+吟,recitation (of a poem)
+宰,prime minister
+序,opportunity
+迭,alternate succession (e.g. to throne)
+裕,wealthy
+栽,cultivation
+叙,descriptive poetry
+疎,incompletely
+哲,sage
+苗,seedling
+塊,lump
+彩,vivid
+徐,"going slowly (of a car, train, etc.)"
+訴,to raise
+雄,"male (animal, plant)"
+句,section (i.e. of text)
+塑,plaster image
+徹,to go by
+誘,to invite
+撤,evacuation
+描,to draw
+憂,depression
+駆,to run
+升,measuring container
+礎,foundation stone
+融,financing
+壊,to be broken
+斎,congratulation
+典,ceremony
+懐,inside the breast of one's clothing (esp. kimono)
+壮,vibrancy
+浜,beach
+愚,foolishness
+匠,craftsman
+賓,visitor from afar
+裁,judge
+抄,excerpt
+添,to garnish
+頻,frequently
+誉,Nakajima Homare
+劾,report of an official's offence to the emperor (offense)
+遇,coincidence
+債,debt
+肖,portrait
+奏,report to the emperor
+敏,quick
+催,event
+尚,still
+瓶,bottle
+荘,manor
+涯,horizon
+屈,disgrace
+羊,sheep (Ovis aries)
+街,town
+載,10^44
+慨,deploring the course of public events
+松,pine tree (Pinus spp.)
+倉,warehouse
+熊,bear (any mammal of family Ursidae)
+沼,marsh
+斗,to
+該,said
+繰,to repeat
+昭,nth year in the Shōwa era (1926.12.25-1989.1.7)
+挿,"to hold between (e.g. one's fingers, chopsticks)"
+吐,nausea
+扶,to save
+概,appearance
+宵,evening
+桑,mulberry (tree)
+庸,tax paid to avoid forced labor (ritsuryō period)
+剤,medicine
+巣,nest
+揚,to raise
+垣,fence
+勲,merit (esp. order of merit)
+揺,vibration
+薫,aroma
+症,illness
+曹,palace room for government officials
+附,to attach
+崎,cape (on coast)
+祥,omen (usu. good)
+郡,district
+称,name
+爽,fresh
+削,"to shave (wood, leather, etc.)"
+赴,to go in the direction of
+唱,to sing
+創,wound
+刑,penalty
+喪,mourning
+奴,fellow
+核,stone (of a fruit)
+索,rope
+渉,to cross over
+殻,shell
+系,system
+策,plan
+葬,funeral
+窯,stove
+郭,district
+径,road
+酢,vinegar
+養,training
+茎,stalk
+搾,"to wring (towel, rag)"
+訟,litigation
+僧,monk
+刀,sword (esp. Japanese single-edged)
+腐,decomposition
+擁,protection
+錯,rubbing
+敷,suffix indicating room size (following a number of tatami mats and a counter)
+謡,noh chanting
+隔,every other
+掌,palm (of the hand)
+閣,cabinet ministers
+契,contract
+晶,crystallization
+賦,poem
+抑,in the first place
+遭,to meet
+譜,(sheet) music
+獲,to get
+焦,focus
+槽,ship
+豆,"legume (esp. edible legumes or their seeds, e.g. beans, peas, pulses)"
+侮,(something) despised
+嚇,to threaten
+啓,enlightenment
+硝,glass
+穫,to harvest
+掲,notice
+渓,valley
+詔,imperial decree
+翼,wing
+岳,peak
+証,proof
+霜,frost
+蛍,firefly (Luciola cruciata)
+撮,to take (a photograph)
+騒,noise
+裸,nakedness
+擦,to rub
+傷,wound
+藻,algae
+伏,to turn over (face down)
+羅,Latin (language)
+奨,scholarship
+掛,credit
+桃,peach (Prunus persica)
+雷,lightning
+潟,lagoon
+詳,detailed
+討,debate
+括,brackets
+携,carrying (on one's person or in the hand)
+彰,Shōgitai (group of former Tokugawa retainers opposed to the Meiji government and fought in the battle of Ueno)
+透,transparent
+継,continuation
+障,shoji (paper sliding door)
+喝,exclamation used to scold practitioners (in Zen)
+桟,sheathing (under thatched roofing)
+憧,to long for
+悼,to grieve over
+酪,"acidic drink made from fermented milk (cow, sheep, mare; one of the five flavors in Buddhism)"
+渇,thirst
+慶,to be delighted
+蚕,silkworm (Bombyx mori)
+衝,important point (e.g. on a route)
+惨,appalling
+即,instantly
+陶,pottery
+覆,concealment (of one's vices)
+償,recompense
+滑,to glide
+憩,rest
+傘,umbrella
+礁,reef
+搭,embarkation
+覧,to see
+褐,dark indigo (almost black)
+鐘,bell (often a large hanging bell)
+促,promotion
+棟,ridge (of roof)
+濫,abuse
+轄,wedge
+鶏,bird
+藍,"dyer's knotweed (Persicaria tinctoria, used to produce indigo dye)"
+且,and
+酸,acid
+痘,smallpox
+欄,section (e.g. in a newspaper)
+株,stock
+冗,waste
+紛,dispute
+吏,government official
+鯨,whale (Cetacea spp.)
+雰,atmosphere
+鎌,sickle
+噴,eruption
+刈,cut
+暫,for a moment
+墳,grave
+撃,to hit (someone)
+士,warrior (esp. of military retainers of daimyos in the Edo period)
+俗,layman (esp. as opposed to a Buddhist monk)
+統,unity
+憤,indignation
+痢,diarrhea
+激,extremely
+浄,clean
+稲,rice plant (Oryza sativa)
+奮,strenuous effort
+剰,besides
+属,genus
+踏,railway crossing
+履,shoe
+賊,thief
+糖,sugar
+璃,Meaning not found
+缶,can
+穴,hole
+氏,Mr
+離,"li (one of the trigrams of the I Ching: fire, south)"
+謄,certified copy
+丙,third rank
+肝,liver
+率,rate
+藤,"wisteria (esp. Japanese wisteria, Wisteria floribunda)"
+結,marriage
+闘,to make war (on)
+冠,traditional cap worn by Shinto clergy and courtiers
+傑,the top (e.g. top ten)
+縄,rope
+騰,rise (in price or value)
+併,however

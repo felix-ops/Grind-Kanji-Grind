@@ -1,426 +1,380 @@
-﻿n3,n3
-1,1
-2,2
-3,3
-4,4
-5,5
-6,6
-7,7
-8,8
-9,9
-10,10
-11,11
-12,12
-13,13
-14,14
-15,15
-16,16
-17,17
-18,18
-19,19
-20,20
-21,21
-22,22
-23,23
-24,24
-25,25
-26,26
-27,27
-28,28
-29,29
-30,30
-31,31
-32,32
-33,33
-34,34
-35,35
-36,36
-37,37
-38,38
-39,39
-40,40
-41,41
-42,42
-43,43
-44,44
-45,45
-46,46
-47,47
-48,48
-49,49
-50,50
-51,51
-52,52
-53,53
-54,54
-55,55
-56,56
-57,57
-58,58
-59,59
-60,60
-61,61
-62,62
-63,63
-64,64
-65,65
-66,66
-67,67
-68,68
-69,69
-70,70
-71,71
-72,72
-73,73
-74,74
-75,75
-76,76
-77,77
-78,78
-79,79
-80,80
-81,81
-82,82
-83,83
-84,84
-85,85
-86,86
-87,87
-88,88
-89,89
-90,90
-91,91
-92,92
-93,93
-94,94
-95,95
-96,96
-97,97
-98,98
-99,99
-100,100
-101,101
-102,102
-103,103
-104,104
-105,105
-106,106
-107,107
-108,108
-109,109
-110,110
-111,111
-112,112
-113,113
-114,114
-115,115
-116,116
-117,117
-118,118
-119,119
-120,120
-121,121
-122,122
-123,123
-124,124
-125,125
-126,126
-127,127
-128,128
-129,129
-130,130
-131,131
-132,132
-133,133
-134,134
-135,135
-136,136
-137,137
-138,138
-139,139
-140,140
-141,141
-142,142
-143,143
-144,144
-145,145
-146,146
-147,147
-148,148
-149,149
-150,150
-151,151
-152,152
-153,153
-154,154
-155,155
-156,156
-157,157
-158,158
-159,159
-160,160
-161,161
-162,162
-163,163
-164,164
-165,165
-166,166
-167,167
-168,168
-169,169
-170,170
-171,171
-172,172
-173,173
-174,174
-175,175
-176,176
-177,177
-178,178
-179,179
-180,180
-181,181
-182,182
-183,183
-184,184
-185,185
-186,186
-187,187
-188,188
-189,189
-190,190
-191,191
-192,192
-193,193
-194,194
-195,195
-196,196
-197,197
-198,198
-199,199
-200,200
-201,201
-202,202
-203,203
-204,204
-205,205
-206,206
-207,207
-208,208
-209,209
-210,210
-211,211
-212,212
-213,213
-214,214
-215,215
-216,216
-217,217
-218,218
-219,219
-220,220
-221,221
-222,222
-223,223
-224,224
-225,225
-226,226
-227,227
-228,228
-229,229
-230,230
-231,231
-232,232
-233,233
-234,234
-235,235
-236,236
-237,237
-238,238
-239,239
-240,240
-241,241
-242,242
-243,243
-244,244
-245,245
-246,246
-247,247
-248,248
-249,249
-250,250
-251,251
-252,252
-253,253
-254,254
-255,255
-256,256
-257,257
-258,258
-259,259
-260,260
-261,261
-262,262
-263,263
-264,264
-265,265
-266,266
-267,267
-268,268
-269,269
-270,270
-271,271
-272,272
-273,273
-274,274
-275,275
-276,276
-277,277
-278,278
-279,279
-280,280
-281,281
-282,282
-283,283
-284,284
-285,285
-286,286
-287,287
-288,288
-289,289
-290,290
-291,291
-292,292
-293,293
-294,294
-295,295
-296,296
-297,297
-298,298
-299,299
-300,300
-301,301
-302,302
-303,303
-304,304
-305,305
-306,306
-307,307
-308,308
-309,309
-310,310
-311,311
-312,312
-313,313
-314,314
-315,315
-316,316
-317,317
-318,318
-319,319
-320,320
-321,321
-322,322
-323,323
-324,324
-325,325
-326,326
-327,327
-328,328
-329,329
-330,330
-331,331
-332,332
-333,333
-334,334
-335,335
-336,336
-337,337
-338,338
-339,339
-340,340
-341,341
-342,342
-343,343
-344,344
-345,345
-346,346
-347,347
-348,348
-349,349
-350,350
-351,351
-352,352
-353,353
-354,354
-355,355
-356,356
-357,357
-358,358
-359,359
-360,360
-361,361
-362,362
-363,363
-364,364
-365,365
-366,366
-367,367
-368,368
-369,369
-370,370
-371,371
-372,372
-373,373
-374,374
-375,375
-376,376
-377,377
-378,378
-379,379
-380,380
-381,381
-382,382
-383,383
-384,384
-385,385
-386,386
-387,387
-388,388
-389,389
-390,390
-391,391
-392,392
-393,393
-394,394
-395,395
-396,396
-397,397
-398,398
-399,399
-400,400
-401,401
-402,402
-403,403
-404,404
-405,405
-406,406
-407,407
-408,408
-409,409
-410,410
-411,411
-412,412
-413,413
-414,414
-415,415
-416,416
-417,417
-418,418
-419,419
-420,420
-421,421
-422,422
-423,423
-424,424
-425,425
+﻿市,Meaning
+流,way
+件,matter
+閉,to close
+留,ruble (Russian currency)
+愛,love
+他,another place
+寒,cold
+打,dozen
+働,to work
+県,prefecture (Japan)
+米,metre (unit of length)
+太,fat
+両,"both (hands, parents, sides, etc.)"
+暗,darkness
+職,job
+対,pair
+得,profit
+良,"good (quality, condition, etc.)"
+険,precipitous
+位,throne
+返,number of times
+指,finger
+申,the Monkey (ninth sign of the Chinese zodiac)
+変,strange
+感,feeling
+師,teacher
+退,tedious
+慣,to get used to
+身,one's body
+関,barrier
+突,very
+便,flight (e.g. airline flight)
+権,right (to do something)
+信,honesty
+歯,tooth
+神,god
+捕,prisoner (of war)
+林,wood
+偉,tremendous
+資,funds
+観,look
+違,to differ (from)
+深,growing late
+内,inside
+暮,sunset
+進,progress
+森,forest
+限,end
+示,to (take out and) show
+宅,house
+類,kind
+原,field
+寝,sleep
+育,to raise
+現,"present (e.g. government, administration)"
+難,difficulty
+礼,thanks
+次,next
+冷,cold water
+顔,face
+抱,to hold in one's arms
+戻,to turn back (e.g. half-way)
+願,desire
+似,looking like (someone)
+放,broadcasting
+例,example
+法,law
+引,-off (price reduction)
+危,danger
+因,origin
+呼,breathing
+治,politics
+達,pluralizing suffix (esp. for people and animals; formerly honorific)
+任,obligation
+辞,language
+訪,to visit
+列,row
+認,recognition
+報,information
+単,one layer
+熱,heat
+式,way
+吹,to blow (of the wind)
+念,sense
+連,two reams (of paper)
+識,acquaintanceship
+探,to search for
+記,account
+亡,death
+短,short
+忙,busy
+失,loss (of something)
+能,talent
+互,each other
+忘,lost article
+路,road
+寄,contribution
+規,regulation
+老,old age
+労,labor
+泳,to swim
+喜,to be delighted
+段,step
+断,decision
+実,truth
+破,middle section of a song (in gagaku or noh)
+期,period
+誤,mistake
+数,several
+談,talk
+馬,horse
+望,full moon
+池,pond
+杯,sake cup
+易,type of cleromancy divination (described in the Book of Changes) performed with long sticks
+値,price
+背,back
+恥,shame
+論,argument
+機,chance
+遅,slow
+配,delivery
+和,sum
+敗,loss
+越,Yue (kingdom in ancient China; 6th C-334 BCE)
+交,association
+成,to become
+置,to put
+光,light
+向,opposite side
+声,voice
+制,system
+疑,doubt
+好,good
+性,nature (of a person)
+若,youth
+議,discussion
+弱,a little less than
+政,rule
+園,garden
+煙,smoke
+更,one-fifth of the night (approx. 2 hours)
+守,protection
+遠,distant
+幸,good luck
+客,guest
+取,appropriation
+演,speech
+首,neck
+晴,clear weather
+酒,alcohol
+王,king
+種,seed (e.g. of a plant)
+精,spirit
+箱,box
+受,vedana (sensation)
+静,quiet
+押,closet (built into the wall of a room)
+吸,absorption
+候,season
+末,end
+求,to want
+髪,hair (on the head)
+降,to descend (e.g. a mountain)
+収,income
+満,being full
+石,stone
+抜,to pull out
+横,horizontal (as opposed to vertical)
+昔,the old days
+未,not yet
+反,anti-
+席,seat
+球,ball
+給,wage
+犯,perpetrators of (some) crime
+港,harbour
+頂,crown (of head)
+責,responsibility
+判,seal
+民,people
+積,product
+眠,to sleep
+居,residence
+阪,slope
+構,structure
+務,to work (for)
+折,opportunity
+夢,dream
+化,change to ...
+許,only
+娘,daughter
+加,addition
+可,acceptable
+調,pitch
+命,life
+御,honorific/polite/humble prefix
+雪,snow
+迷,superstition
+直,price
+共,together with
+号,number
+説,theory
+合,gō
+果,"phala (attained state, result)"
+絶,starting field which contains the November and/or December 20-point card
+鳴,to make sound (of an animal)
+晩,evening
+科,department
+供,companion
+番,number (in a series)
+面,face
+告,to tell
+追,to catch up (with)
+刻,time
+恐,frightening
+否,no
+洗,washing machine
+痛,ouch
+宿,lodging
+彼,he
+過,surplus-
+非,fault
+込,including ...
+船,ship
+靴,shoe
+戦,war
+低,"low (level, value, price, etc.)"
+飛,rook
+門,door (esp. Japanese-style)
+疲,to get tired
+困,to be troubled
+術,art
+定,certainty
+悲,karuna (compassion)
+婚,marriage
+費,cost
+役,role
+約,approximately
+曲,composition
+選,selection
+薬,medicine
+局,bureau
+庭,garden
+美,beauty
+備,to furnish with
+由,reason
+全,all
+回,counter for occurrences
+処,place
+然,like that
+程,extent
+差,difference
+初,first
+必,definiteness
+所,place
+勤,to work (for)
+座,seat
+暑,heat
+才,ability
+緒,beginning
+祖,parent
+表,surface
+皆,everyone
+妻,wife
+適,by chance
+絵,picture
+助,help
+組,class (of students)
+遊,play
+区,ward
+除,division
+解,"solution (of an equation, inequality, etc.)"
+苦,pain
+済,arranged
+猫,"cat (esp. the domestic cat, Felis catus)"
+具,tool
+優,Excellent (grade)
+与,together with ...
+菜,side dish
+点,dot
+貧,poverty
+予,other
+最,the most
+争,to compete
+余,other
+偶,by chance
+害,injury
+相,together
+招,to call out (to)
+歳,year
+草,grass
+伝,legend
+夫,husband
+際,occasion
+付,furnished with
+要,pivot
+在,the country
+容,form
+君,you
+徒,futility
+怖,frightening
+財,fortune
+消,consumption
+途,road
+罪,crime
+都,"capital (esp. Kyoto, Japan's former capital)"
+葉,leaf
+渡,to ferry across (e.g. a river)
+陽,day
+負,negative
+笑,laugh
+窓,window
+昨,last (year)
+浮,buoyancy
+様,appearing ...
+格,status
+商,quotient
+婦,bride
+形,form
+努,third principle of the Eight Principles of Yong
+富,riches
+怒,to get angry
+覚,Satori
+係,charge
+勝,win
+想,conception
+当,or
+確,sure
+投,pitching ability
+欲,greed
+到,finally
+部,"department (in an organization, company, etc.)"
+殺,murder
+逃,to run away
+舞,dancing
+経,the vertical
+察,cops
+倒,inverted
+景,shadow
+雑,rough
+軽,"light (e.g. aircraft, truck)"
+増,increase
+頼,to request
+活,living
+参,three
+福,good fortune
+落,slip
+腹,abdomen
+盗,to steal
+割,rate
+産,(giving) birth
+束,bundle
+払,"to pay (e.g. money, bill)"
+警,police
+散,loose articles (not packaged with other things)
+息,breath
+迎,to go out to meet
+賛,praise
+登,mountain climbing
+残,remaining
+速,gear
+利,advantage
+状,form
+側,"side (of something, or taking someone's side)"
+等,et cetera
+乗,(nth) power
+支,China
+欠,yawn
+常,eternity
+情,feelings
+続,continuation
+頭,head
+完,The End
+決,decision
+平,something broad and flat
+官,government service
+存,existence
+村,village
