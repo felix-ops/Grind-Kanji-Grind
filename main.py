@@ -185,10 +185,11 @@ def generate_quiz_order(max):
     quiz_order = list(range(max))
     random.shuffle(quiz_order)
     
-def update_all_character_buttons_color(color):
+def reset_all_character_buttons(color):
     for i in range(row):
         for j in range(column):
             buttons_list[i][j].config(bg=color)
+            buttons_list[i][j].config(state=tkinter.NORMAL)
 
 def randomize_level_clicked():
     global current_hint_list, current_kanji_list
@@ -276,6 +277,7 @@ def character_button_clicked(char_index, i, j):
             if quiz_order[current_hint_list_position] == char_index:
                 score += 1
                 buttons_list[i][j].config(bg="green")
+                buttons_list[i][j].config(state=tkinter.DISABLED)
                 score_label.config(text=str(score) + "/" + str(len(current_hint_list)))
 
             right_arrow_clicked()
@@ -305,7 +307,7 @@ def restart_clicked():
     randomize_checkbox.config(state=tkinter.NORMAL)
     solved_hint_list_positions = []
 
-    update_all_character_buttons_color(bg_color)
+    reset_all_character_buttons(bg_color)
 
     reset_timer()
 
