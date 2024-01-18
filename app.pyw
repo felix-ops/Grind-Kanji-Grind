@@ -8,7 +8,8 @@ import csv
 from datetime import timedelta
 
 #how many characters it can show at once
-part_size = 110
+part_size = 114
+hover_turned_on = False
 
 #utility functions
 def fetch_data_from_csv(kanji_list, hint_list, file_path):
@@ -51,7 +52,7 @@ def create_character_buttons(character_list):
             else:
                 temp = " "
             buttons_list[i][j] = Button(root, text=str(temp), width=button_width, height=button_height,
-                            font=("Helvetica", button_fontsize), bg=bg_color, fg=fg_color, activebackground=ac_color,
+                            font=("MS Gothic", button_fontsize), bg=bg_color, fg=fg_color, activebackground=ac_color, disabledforeground="#ffffff",
                             command=lambda char_index=char_index, i=i, j=j: character_button_clicked(char_index, i, j))
             buttons_list[i][j].grid(row=i, column=j)
             char_index += 1
@@ -70,13 +71,13 @@ def create_character_buttons(character_list):
 
 def create_hint_label():
     global hint_label
-    hint_label = Label(root, text="Click Any Kanji", font=("Arial Rounded MT Bold", hint_label_fontsize),
-                    bg=bg_color, fg=fg_color)
-    hint_label.grid(row=row+1, column=7, columnspan=5, pady=35)
+    hint_label = Label(root, text="Click Any Kanji", font=("Bahnschrift", hint_label_fontsize),
+                    bg=bg_color, fg=fg_color, wraplength=400)
+    hint_label.grid(row=row+1, column=7, columnspan=5, pady=0)
 
 def create_kanji_label():
     global kanji_label
-    kanji_label = Label(root, text="漢", font=("Bahnschrift", kanji_label_fontsize),
+    kanji_label = Label(root, text="-", font=("Bahnschrift", kanji_label_fontsize),
                    bg=bg_color, fg=fg_color)
     kanji_label.grid(row=row+1, column=13, columnspan=2, pady=10)
 
@@ -273,7 +274,7 @@ def character_button_clicked(char_index, i, j):
 
             if quiz_order[current_hint_list_position] == char_index:
                 score += 1
-                buttons_list[i][j].config(bg="green")
+                buttons_list[i][j].config(bg="#1d8500")
                 buttons_list[i][j].config(state=tkinter.DISABLED)
                 score_label.config(text=str(score) + "/" + str(len(current_hint_list)))
 
@@ -284,11 +285,11 @@ def character_button_clicked(char_index, i, j):
 # Add this function to update the kanji_label when a button is hovered over
 def on_enter(event, char_index):
     global current_hint_list_position
-
-    if is_timer_running:
-        if quiz_order[current_hint_list_position] not in solved_hint_list_positions:
-            if(char_index < len(current_hint_list)):
-                kanji_label.config(text=current_kanji_list[char_index])
+    if(hover_turned_on):
+        if is_timer_running:
+            if quiz_order[current_hint_list_position] not in solved_hint_list_positions:
+                if(char_index < len(current_hint_list)):
+                    kanji_label.config(text=current_kanji_list[char_index])
 
 
 
@@ -324,7 +325,7 @@ def play_clicked():
     score = 0
     score_label.config(text=str(score)+"/"+str(len(current_hint_list)))
     
-    update_kanji_label("試")
+    update_kanji_label("-")
 
     start_timer()
 
@@ -430,7 +431,7 @@ arrows_image_height = 25
 restart_image_width = 35
 restart_image_height = 35
 
-button_fontsize = 10
+button_fontsize = 25
 hint_label_fontsize = 20
 timer_label_fontsize = 30
 score_label_fontsize = 15
