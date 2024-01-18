@@ -72,8 +72,8 @@ def create_character_buttons(character_list):
 def create_hint_label():
     global hint_label
     hint_label = Label(root, text="Click Any Kanji", font=("Bahnschrift", hint_label_fontsize),
-                    bg=bg_color, fg=fg_color, wraplength=400)
-    hint_label.grid(row=row+1, column=7, columnspan=5, pady=0)
+                    bg=bg_color, fg=fg_color, wraplength=500)
+    hint_label.grid(row=row+1, column=6, columnspan=6, pady=0)
 
 def create_kanji_label():
     global kanji_label
@@ -112,7 +112,7 @@ def create_parts_dropdown():
     part_clicked = StringVar()
     part_dropdown = ttk.Combobox(root, textvariable=part_clicked, values=parts, style='TCombobox', font=("Helvetica", 8))
     part_dropdown.bind("<<ComboboxSelected>>", set_part)
-    part_dropdown.grid(row=row+1, column=2, columnspan=2, pady=35, sticky="s")
+    part_dropdown.grid(row=row+1, column=2, columnspan=2, pady=35, sticky="se")
 
 def create_randomize_checkbox():
     global randomize_checkbox
@@ -127,12 +127,12 @@ def create_randomize_checkbox():
                                             activebackground=bg_color)
 
     randomize_checkbox.deselect()
-    randomize_checkbox.grid(row=row+1, column=0, columnspan=4, pady=25, sticky="n")
+    randomize_checkbox.grid(row=row+1, column=0, columnspan=3, pady=25, sticky="n")
 
 def create_shuffle_button():
     global shuffle_button
-    shuffle_button = Button(root, text="Shuffle", command=shuffle_deck, font=("Helvetica", 18), bg=bg_color, fg=fg_color)
-    shuffle_button.grid(row=row+1, column=4, columnspan=2, pady=35, sticky="s")
+    shuffle_button = Button(root, text="Shuffle", command=shuffle_deck, font=("Helvetica", 15), bg=bg_color, fg=fg_color)
+    shuffle_button.grid(row=row+1, column=3, columnspan=1, pady=20, sticky="N")
 
 def create_interaction_buttons():
     global left_arrow_button
@@ -146,7 +146,7 @@ def create_interaction_buttons():
     play_button = Button(root, image=play_button_image, command=play_clicked,width=restart_image_width, height=restart_image_height, borderwidth=0, bg=bg_color, activebackground=bg_color )
 
 
-    left_arrow_button.grid(row=row+1, column= 6, columnspan=1, pady=35)
+    left_arrow_button.grid(row=row+1, column= 5, columnspan=1, pady=35)
     right_arrow_button.grid(row=row+1, column= 12, columnspan=1, pady=35)
     restart_button.grid(row=row+1, column= 16, columnspan=1, pady=35)
     play_button.grid(row=row+1, column= 16, columnspan=1, pady=35)
