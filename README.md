@@ -25,11 +25,13 @@ The prerequisites required for running the python file
 - ttkthemes 3.0.0
 
 ## Usage
-
+ 
 This application encompasses a comprehensive collection of 1,973 Kanji characters, organized according to the Japanese Language Proficiency Test (JLPT) levels. Users can easily select Kanji based on their respective JLPT levels. By default, the app allows users to click on any Kanji to view its meaning. When the 'Play' button is activated alongside the timer, the app seamlessly transitions into quiz mode. During the quiz, users can click on Kanji buttons to progress through the questions.
 The button "shuffle upto current level" checkbox will randomly select kanji before the currently selected level and make a quiz from that.
 
 It is advisable not to use the shuffle button until one becomes thoroughly familiar with the current Kanji level, as it may disrupt the learning flow.
+
+Personally using this tool I memorize about 80-120 kanji characters in a span of 1 - 2 Hours. Even though I pass the quiz once  I'll retry and learn them on regular intervals.
 
 ## Additional Notes
 
