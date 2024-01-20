@@ -1,33 +1,17 @@
-# Project Title
+# Grind Kanji Grind
 
-A brief description of your project.
+An Interactive Quiz based tool for leaning Kanji
 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
-Provide a brief overview of your project. What does it do? Why is it useful?
-
-## Features
-
-List some key features of your project.
-
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Getting Started
-
-Provide instructions on how to get started with your project.
+Learning a subject is most effective when actively engaged in it. Similarly, this tool facilitates rapid memorization of Kanji through a quiz-based learning approach. While the traditional flashcard method is useful for solidifying concepts over the long term, Grind Kanji Grind excels at swiftly comprehending Kanji characters. Utilizing a quiz format, users receive instant feedback on each mistake and correct choice, enhancing the efficiency of the learning process.
 
 ### Prerequisites
 
