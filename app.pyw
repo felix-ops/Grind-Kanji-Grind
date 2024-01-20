@@ -77,7 +77,7 @@ def create_hint_label():
 
 def create_kanji_label():
     global kanji_label
-    kanji_label = Label(root, text="-", font=("Bahnschrift", kanji_label_fontsize),
+    kanji_label = Label(root, text="-", font=("MS Gothic", kanji_label_fontsize),
                    bg=bg_color, fg=fg_color)
     kanji_label.grid(row=row+1, column=13, columnspan=2, pady=10)
 
@@ -104,7 +104,7 @@ def create_levels_dropdown():
 
     style = ttk.Style()
     style.theme_use('clam')  # Choose a theme (e.g., 'clam', 'alt', 'default', etc.)
-    style.configure('TCombobox', background=bg_color, foreground=fg_color, fieldbackground=bg_color)
+    style.configure('TCombobox', background=bg_color, foreground=fg_color, fieldbackground=bg_color, arrowcolor="#888888")
 
 def create_parts_dropdown():
     global part_clicked
