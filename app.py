@@ -408,6 +408,7 @@ for i in range(total_levels):
 
 root = Tk()
 root.title("Grind Kanji Grind")
+root.iconbitmap('./assets/logo.ico')
 
 root.bind('<Left>', on_arrow_key)
 root.bind('<Right>', on_arrow_key)
