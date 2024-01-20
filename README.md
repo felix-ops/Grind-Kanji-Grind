@@ -7,7 +7,7 @@ An Interactive Quiz based tool for leaning Kanji Meaning
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Usage](#usage)
-- [Additional Notes](#prerequisites)
+- [Additional Notes](#additionalnotes)
 
 ## Introduction
 
