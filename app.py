@@ -215,6 +215,10 @@ def randomize_level_clicked():
 
         update_character_buttons(current_kanji_list)
 
+    else:
+        set_level()
+        set_part()
+
 
 #command functions
 def set_level(event=None):
@@ -226,6 +230,8 @@ def set_level(event=None):
     global parts
     parts = calculate_parts(parted_kanjis[level])
     
+    reset_all_character_buttons_color(bg_color)
+
     part_dropdown['values'] = parts
     part_clicked.set(parts[0])
 
@@ -240,6 +246,7 @@ def set_part(event=None):
     current_level = level_clicked.get()
     current_part = part_clicked.get()
 
+    reset_all_character_buttons_color(bg_color)
 
     level = find_index(levels, current_level)
     part = find_index(parts, current_part)
