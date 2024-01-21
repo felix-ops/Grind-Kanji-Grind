@@ -31,7 +31,9 @@ The button "shuffle upto current level" checkbox will randomly select kanji befo
 
 It is advisable not to use the shuffle button until one becomes thoroughly familiar with the current Kanji level, as it may disrupt the learning flow.
 
-Personally using this tool I memorize about 80-120 kanji characters in a span of 1 - 2 Hours. Even though I pass the quiz once  I'll retry and learn them on regular intervals.
+With Grind Kanji Grind we can easily memorize around 80 - 100 new kanji in the 1st hour itself.  And here's how to do it, 
+
+First we have to select the JLPT level and a set of kanji within that level. Then the maximum time limit for each quiz session is 15 minutes, but before starting the quiz we should revise all the kanji and it's meaning for the current level and part. and try to remember as much as possible and it's ok to not remember all the kanji then you'll start the quiz and try to guess all the kanji corresponding to it's meaning, at first attempt you'll make a lot of mistakes and you might not be able to complete the quiz within time and it's ok.  Then revise the same Kanji set, but this time it'll be easier since you've got a lot of positive and negative feedback from the first quiz you'll naturally focus more over the kanji you've found difficult.  And then retry the same quiz after the 2nd study session,  it'll be much easier this time. And by the 3rd time attempting the quiz you'll remember almost all the kanji for that level.  When you are comfortable move on to the next set of kanji characters.
 
 ## Additional Notes
 
