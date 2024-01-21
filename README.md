@@ -25,11 +25,15 @@ The prerequisites required for running the python file
 - ttkthemes 3.0.0
 
 ## Usage
-
+ 
 This application encompasses a comprehensive collection of 1,973 Kanji characters, organized according to the Japanese Language Proficiency Test (JLPT) levels. Users can easily select Kanji based on their respective JLPT levels. By default, the app allows users to click on any Kanji to view its meaning. When the 'Play' button is activated alongside the timer, the app seamlessly transitions into quiz mode. During the quiz, users can click on Kanji buttons to progress through the questions.
 The button "shuffle upto current level" checkbox will randomly select kanji before the currently selected level and make a quiz from that.
 
 It is advisable not to use the shuffle button until one becomes thoroughly familiar with the current Kanji level, as it may disrupt the learning flow.
+
+With Grind Kanji Grind we can easily memorize around 80 - 100 new kanji in the 1st hour itself.  And here's how to do it, 
+
+First we have to select the JLPT level and a set of kanji within that level. Then the maximum time limit for each quiz session is 15 minutes, but before starting the quiz we should revise all the kanji and it's meaning for the current level and part. and try to remember as much as possible and it's ok to not remember all the kanji then you'll start the quiz and try to guess all the kanji corresponding to it's meaning, at first attempt you'll make a lot of mistakes and you might not be able to complete the quiz within time and it's ok.  Then revise the same Kanji set, but this time it'll be easier since you've got a lot of positive and negative feedback from the first quiz you'll naturally focus more over the kanji you've found difficult.  And then retry the same quiz after the 2nd study session,  it'll be much easier this time. And by the 3rd time attempting the quiz you'll remember almost all the kanji for that level.  When you are comfortable move on to the next set of kanji characters.
 
 ## Additional Notes
 
