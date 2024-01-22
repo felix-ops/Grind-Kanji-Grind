@@ -201,10 +201,34 @@ def randomize_level_clicked():
 
     if randomize_checkbox_clicked.get() == "1":
         current_level = level_clicked.get()
+        current_part = part_clicked.get()
         level = find_index(levels, current_level)
+        part = find_index(parts, current_part)
 
-        randomized_hint_list = [hint for sublist in hint_lists[:level+1] for hint in sublist]
-        randomized_kanji_list = [kanji for sublist in kanji_lists[:level+1] for kanji in sublist]
+        hint_index = 0
+        kanji_index = 0
+        randomized_hint_list = []
+        randomized_kanji_list = []
+
+        for sublist in hint_lists[:level+1]:
+            if(hint_index < level):
+                for hint in sublist:
+                    randomized_hint_list.append(hint)
+            else:
+                for hint in sublist[:(part+1)*part_size]:
+                    randomized_hint_list.append(hint)
+            hint_index += 1
+
+        for sublist in kanji_lists[:level+1]:
+            if(kanji_index < level):
+                for kanji in sublist:
+                    randomized_kanji_list.append(kanji)
+            else:
+                for kanji in sublist[:(part+1)*part_size]:
+                    randomized_kanji_list.append(kanji)
+            kanji_index += 1
+
+
 
         merged_list = list(zip(randomized_kanji_list, randomized_hint_list))
         random.shuffle(merged_list)
