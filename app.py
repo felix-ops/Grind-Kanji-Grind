@@ -9,7 +9,7 @@ from datetime import timedelta
 
 #how many characters it can show at once
 part_size = 114
-hover_turned_on = False
+hover_turned_on = True
 
 #utility functions
 def fetch_data_from_csv(kanji_list, hint_list, file_path):
@@ -38,6 +38,10 @@ def on_arrow_key(event):
         left_arrow_clicked()
     elif event.keysym == 'Right':
         right_arrow_clicked()
+    if event.keysym == 'Up':
+        up_arrow_clicked()
+    elif event.keysym == 'Down':
+        down_arrow_clicked()
 
 
 
@@ -52,7 +56,7 @@ def create_character_buttons(character_list):
             else:
                 temp = " "
             buttons_list[i][j] = Button(root, text=str(temp), width=button_width, height=button_height,
-                            font=("MS Gothic", button_fontsize), bg=bg_color, fg=fg_color, activebackground=ac_color, disabledforeground="#ffffff",
+                            font=("MS Gothic", button_fontsize), bg=bg_color, fg=fg_color, activebackground=ac_color, activeforeground="#ffffff", disabledforeground="#ffffff",
                             command=lambda char_index=char_index, i=i, j=j: character_button_clicked(char_index, i, j))
             buttons_list[i][j].grid(row=i, column=j)
             char_index += 1
@@ -63,11 +67,11 @@ def create_character_buttons(character_list):
     for i in range(row):
         root.grid_rowconfigure(i, weight=1)
 
-    # Bind the on_enter function to each character button
+    # Bind the manual_color_update_on_hover function to each character button
     for i in range(row):
         for j in range(column):
             char_index = i * column + j
-            buttons_list[i][j].bind("<Enter>", lambda event, char_index=char_index: on_enter(event, char_index))
+            buttons_list[i][j].bind("<Enter>", lambda event, char_index=char_index: manual_color_update_on_hover(event, char_index))
 
 def create_hint_label():
     global hint_label
@@ -199,6 +203,8 @@ def reset_all_character_buttons_color(color):
 def randomize_level_clicked():
     global current_hint_list, current_kanji_list
 
+    reset_all_character_buttons_color(bg_color)
+
     if randomize_checkbox_clicked.get() == "1":
         current_level = level_clicked.get()
         current_part = part_clicked.get()
@@ -317,14 +323,22 @@ def character_button_clicked(char_index, i, j):
             if len(solved_hint_list_positions) == len(current_hint_list):
                 restart_clicked()
 
-# Add this function to update the kanji_label when a button is hovered over
-def on_enter(event, char_index):
+# Add this function to update the kanji_label when a button is hovered over(turned off by default)
+# Add this function to update the kanji_label when a button is hovered over (turned off by default)
+def manual_color_update_on_hover(event, char_index):
     global current_hint_list_position
-    if(hover_turned_on):
-        if is_timer_running:
-            if quiz_order[current_hint_list_position] not in solved_hint_list_positions:
-                if(char_index < len(current_hint_list)):
-                    kanji_label.config(text=current_kanji_list[char_index])
+
+    if event.keysym == 'c' and not buttons_list[char_index // column][char_index % column]['state'] == tkinter.DISABLED:
+        buttons_list[char_index // column][char_index % column].config(bg="#1d8500")
+        buttons_list[char_index // column][char_index % column].config(state=tkinter.NORMAL)
+
+    if event.keysym == 'x' and not buttons_list[char_index // column][char_index % column]['state'] == tkinter.DISABLED:
+        buttons_list[char_index // column][char_index % column].config(bg="#851000")
+        buttons_list[char_index // column][char_index % column].config(state=tkinter.NORMAL)
+
+    if event.keysym == 'z' and not buttons_list[char_index // column][char_index % column]['state'] == tkinter.DISABLED:
+        buttons_list[char_index // column][char_index % column].config(bg=bg_color)
+        buttons_list[char_index // column][char_index % column].config(state=tkinter.NORMAL)
 
 
 
@@ -369,25 +383,49 @@ def left_arrow_clicked():
     global current_hint_list_position
     current_hint_list_position -= 1
     current_hint_list_position %= len(current_hint_list)
-    if(not is_timer_running):
+    if not is_timer_running:
         update_hint_label(current_hint_list[current_hint_list_position])
         update_kanji_label(current_kanji_list[current_hint_list_position])
-    else:
-        while((quiz_order[current_hint_list_position] in solved_hint_list_positions) and not(len(solved_hint_list_positions) == len(current_hint_list))):
-            current_hint_list_position -= 1
-        update_hint_label(current_hint_list[quiz_order[current_hint_list_position]])
+        update_active_button()
 
 def right_arrow_clicked():
     global current_hint_list_position
     current_hint_list_position += 1
     current_hint_list_position %= len(current_hint_list)
-    if(not is_timer_running):
+    if not is_timer_running:
         update_hint_label(current_hint_list[current_hint_list_position])
         update_kanji_label(current_kanji_list[current_hint_list_position])
-    else:
-        while((quiz_order[current_hint_list_position] in solved_hint_list_positions) and not(len(solved_hint_list_positions) == len(current_hint_list))):
-            current_hint_list_position += 1
-        update_hint_label(current_hint_list[quiz_order[current_hint_list_position]])
+        update_active_button()
+
+def up_arrow_clicked():
+    global current_hint_list_position, column
+    current_hint_list_position -= column
+    current_hint_list_position %= len(current_hint_list)
+    if not is_timer_running:
+        update_hint_label(current_hint_list[current_hint_list_position])
+        update_kanji_label(current_kanji_list[current_hint_list_position])
+        update_active_button()
+
+def down_arrow_clicked():
+    global current_hint_list_position, column
+    current_hint_list_position += column
+    current_hint_list_position %= len(current_hint_list)
+    if not is_timer_running:
+        update_hint_label(current_hint_list[current_hint_list_position])
+        update_kanji_label(current_kanji_list[current_hint_list_position])
+        update_active_button()
+
+def update_active_button():
+    global current_hint_list_position, row, column
+    i, j = divmod(current_hint_list_position, column)
+    for x in range(row):
+        for y in range(column):
+            buttons_list[x][y].config(state=tkinter.NORMAL)
+    buttons_list[i][j].config(state=tkinter.ACTIVE)
+
+
+
+
 
 
 #timer functions
@@ -448,13 +486,18 @@ root.iconbitmap('./assets/logo.ico')
 
 root.bind('<Left>', on_arrow_key)
 root.bind('<Right>', on_arrow_key)
+root.bind('<Up>', on_arrow_key)
+root.bind('<Down>', on_arrow_key)
+
+root.bind('<Key>', lambda event: manual_color_update_on_hover(event, current_hint_list_position))
+
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
 bg_color = "#222222"
 fg_color = "#FFFFFF"
-ac_color = "#333333"
+ac_color = "#333344"
 
 root.configure(bg=bg_color)
 root.wm_state('zoomed')
