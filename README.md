@@ -1,6 +1,6 @@
 # Grind Kanji Grind
 
-An Interactive Quiz based tool for leaning Kanji Meaning
+An Interactive Quiz based tool for learning Kanji Meanings
 
 ## Table of Contents
 
