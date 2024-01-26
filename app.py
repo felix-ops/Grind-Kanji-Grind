@@ -104,6 +104,7 @@ def create_levels_dropdown():
     level_clicked = StringVar()
     level_dropdown = ttk.Combobox(root, textvariable=level_clicked, values=levels, style='TCombobox', font=("Helvetica", 8))
     level_dropdown.bind("<<ComboboxSelected>>", set_level)
+    level_dropdown.bind("<KeyPress>", lambda event: "break")
     level_dropdown.grid(row=row+1, column=0, columnspan=2, pady=35, sticky="s")
 
     style = ttk.Style()
@@ -116,6 +117,7 @@ def create_parts_dropdown():
     part_clicked = StringVar()
     part_dropdown = ttk.Combobox(root, textvariable=part_clicked, values=parts, style='TCombobox', font=("Helvetica", 8))
     part_dropdown.bind("<<ComboboxSelected>>", set_part)
+    part_dropdown.bind("<KeyPress>", lambda event: "break")
     part_dropdown.grid(row=row+1, column=2, columnspan=2, pady=35, sticky="se")
 
 def create_randomize_checkbox():
