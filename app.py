@@ -38,11 +38,6 @@ def on_arrow_key(event):
         left_arrow_clicked()
     elif event.keysym == 'Right':
         right_arrow_clicked()
-    if event.keysym == 'Up':
-        up_arrow_clicked()
-    elif event.keysym == 'Down':
-        down_arrow_clicked()
-
 
 
 #functions for creating elements
@@ -104,7 +99,6 @@ def create_levels_dropdown():
     level_clicked = StringVar()
     level_dropdown = ttk.Combobox(root, textvariable=level_clicked, values=levels, style='TCombobox', font=("Helvetica", 8))
     level_dropdown.bind("<<ComboboxSelected>>", set_level)
-    level_dropdown.bind("<KeyPress>", lambda event: "break")
     level_dropdown.grid(row=row+1, column=0, columnspan=2, pady=35, sticky="s")
 
     style = ttk.Style()
@@ -117,7 +111,6 @@ def create_parts_dropdown():
     part_clicked = StringVar()
     part_dropdown = ttk.Combobox(root, textvariable=part_clicked, values=parts, style='TCombobox', font=("Helvetica", 8))
     part_dropdown.bind("<<ComboboxSelected>>", set_part)
-    part_dropdown.bind("<KeyPress>", lambda event: "break")
     part_dropdown.grid(row=row+1, column=2, columnspan=2, pady=35, sticky="se")
 
 def create_randomize_checkbox():
@@ -271,6 +264,7 @@ def set_level(event=None):
     current_hint_list_position = 0
     randomize_checkbox.deselect()
 
+
 def set_part(event=None):
     global current_hint_list_position
     global randomize_checkbox
@@ -287,6 +281,7 @@ def set_part(event=None):
     update_deck(level, part)
     current_hint_list_position = 0
     randomize_checkbox.deselect()
+
 
 def shuffle_deck():
     global current_kanji_list
@@ -371,6 +366,7 @@ def play_clicked():
     randomize_checkbox.config(state=tkinter.DISABLED)
 
     reset_all_character_buttons_color(bg_color)
+    reset_all_character_buttons_state()
     generate_quiz_order(len(current_hint_list))
     update_hint_label(current_hint_list[quiz_order[current_hint_list_position]])
 
@@ -389,6 +385,10 @@ def left_arrow_clicked():
         update_hint_label(current_hint_list[current_hint_list_position])
         update_kanji_label(current_kanji_list[current_hint_list_position])
         update_active_button()
+    else:
+        while((quiz_order[current_hint_list_position] in solved_hint_list_positions) and not(len(solved_hint_list_positions) == len(current_hint_list))):
+            current_hint_list_position -= 1
+        update_hint_label(current_hint_list[quiz_order[current_hint_list_position]])
 
 def right_arrow_clicked():
     global current_hint_list_position
@@ -398,24 +398,11 @@ def right_arrow_clicked():
         update_hint_label(current_hint_list[current_hint_list_position])
         update_kanji_label(current_kanji_list[current_hint_list_position])
         update_active_button()
+    else:
+        while((quiz_order[current_hint_list_position] in solved_hint_list_positions) and not(len(solved_hint_list_positions) == len(current_hint_list))):
+            current_hint_list_position += 1
+        update_hint_label(current_hint_list[quiz_order[current_hint_list_position]])
 
-def up_arrow_clicked():
-    global current_hint_list_position, column
-    current_hint_list_position -= column
-    current_hint_list_position %= len(current_hint_list)
-    if not is_timer_running:
-        update_hint_label(current_hint_list[current_hint_list_position])
-        update_kanji_label(current_kanji_list[current_hint_list_position])
-        update_active_button()
-
-def down_arrow_clicked():
-    global current_hint_list_position, column
-    current_hint_list_position += column
-    current_hint_list_position %= len(current_hint_list)
-    if not is_timer_running:
-        update_hint_label(current_hint_list[current_hint_list_position])
-        update_kanji_label(current_kanji_list[current_hint_list_position])
-        update_active_button()
 
 def update_active_button():
     global current_hint_list_position, row, column
@@ -424,10 +411,6 @@ def update_active_button():
         for y in range(column):
             buttons_list[x][y].config(state=tkinter.NORMAL)
     buttons_list[i][j].config(state=tkinter.ACTIVE)
-
-
-
-
 
 
 #timer functions
@@ -488,9 +471,6 @@ root.iconbitmap('./assets/logo.ico')
 
 root.bind('<Left>', on_arrow_key)
 root.bind('<Right>', on_arrow_key)
-root.bind('<Up>', on_arrow_key)
-root.bind('<Down>', on_arrow_key)
-
 root.bind('<Key>', lambda event: manual_color_update_on_hover(event, current_hint_list_position))
 
 
