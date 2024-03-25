@@ -1,4 +1,5 @@
 import random
+import math
 from tkinter import *
 from tkinter import ttk
 import tkinter 
@@ -7,9 +8,8 @@ from PIL import Image, ImageTk
 import csv
 from datetime import timedelta
 
-#how many rows it can show at once
-rows_size = 4
-part_size = rows_size * 19
+#how characters rows it can show at once
+part_size = 80
 hover_turned_on = True
 
 #utility functions
@@ -73,25 +73,25 @@ def create_hint_label():
     global hint_label
     hint_label = Label(root, text="Click Any Kanji", font=("Bahnschrift", hint_label_fontsize),
                     bg=bg_color, fg=fg_color, wraplength=500)
-    hint_label.grid(row=row+1, column=6, columnspan=6, pady=0)
+    hint_label.grid(row=row+1, column=4, columnspan=4, pady=0)
 
 def create_kanji_label():
     global kanji_label
     kanji_label = Label(root, text="-", font=("MS Gothic", kanji_label_fontsize),
                    bg=bg_color, fg=fg_color)
-    kanji_label.grid(row=row+1, column=13, columnspan=2, pady=10)
+    kanji_label.grid(row=row+1, column=9, columnspan=1, pady=10)
 
 def create_timer_label():
     global timer_label
     timer_label = Label(root, text="15:00", font=("Arial Rounded MT Bold", timer_label_fontsize),
                    bg=bg_color, fg=fg_color)
-    timer_label.grid(row=row+1, column=17, columnspan=2, pady=35)
+    timer_label.grid(row=row+1, column=11, columnspan=1, pady=35)
 
 def create_score_label():
     global score_label
     score_label = Label(root, text="--/--", font=("Bahnschrift", score_label_fontsize),
                    bg=bg_color, fg=fg_color)
-    score_label.grid(row=row+1, column=15, columnspan=1, pady=35)
+    score_label.grid(row=row+1, column=10, columnspan=1, pady=35)
 
 def create_levels_dropdown():
     global level_clicked
@@ -100,7 +100,7 @@ def create_levels_dropdown():
     level_clicked = StringVar()
     level_dropdown = ttk.Combobox(root, textvariable=level_clicked, values=levels, style='TCombobox', font=("Helvetica", 8))
     level_dropdown.bind("<<ComboboxSelected>>", set_level)
-    level_dropdown.grid(row=row+1, column=0, columnspan=2, pady=35, sticky="s")
+    level_dropdown.grid(row=row+1, column=0, columnspan=1, pady=35, sticky="se")
 
     style = ttk.Style()
     style.theme_use('clam')  # Choose a theme (e.g., 'clam', 'alt', 'default', etc.)
@@ -112,7 +112,7 @@ def create_parts_dropdown():
     part_clicked = StringVar()
     part_dropdown = ttk.Combobox(root, textvariable=part_clicked, values=parts, style='TCombobox', font=("Helvetica", 8))
     part_dropdown.bind("<<ComboboxSelected>>", set_part)
-    part_dropdown.grid(row=row+1, column=2, columnspan=2, pady=35, sticky="se")
+    part_dropdown.grid(row=row+1, column=1, columnspan=1, pady=35, sticky="se")
 
 def create_randomize_checkbox():
     global randomize_checkbox
@@ -127,12 +127,12 @@ def create_randomize_checkbox():
                                             activebackground=bg_color)
 
     randomize_checkbox.deselect()
-    randomize_checkbox.grid(row=row+1, column=0, columnspan=3, pady=25, sticky="n")
+    randomize_checkbox.grid(row=row+1, column=0, columnspan=2, pady=25, sticky="ne")
 
 def create_shuffle_button():
     global shuffle_button
     shuffle_button = Button(root, text="Shuffle", command=shuffle_deck, font=("Helvetica", 15), bg=bg_color, fg=fg_color)
-    shuffle_button.grid(row=row+1, column=3, columnspan=1, pady=20, sticky="N")
+    shuffle_button.grid(row=row+1, column=2, columnspan=1, pady=35, sticky="s")
 
 def create_interaction_buttons():
     global left_arrow_button
@@ -146,10 +146,10 @@ def create_interaction_buttons():
     play_button = Button(root, image=play_button_image, command=play_clicked,width=restart_image_width, height=restart_image_height, borderwidth=0, bg=bg_color, activebackground=bg_color )
 
 
-    left_arrow_button.grid(row=row+1, column= 5, columnspan=1, pady=35)
-    right_arrow_button.grid(row=row+1, column= 12, columnspan=1, pady=35)
-    restart_button.grid(row=row+1, column= 16, columnspan=1, pady=35)
-    play_button.grid(row=row+1, column= 16, columnspan=1, pady=35)
+    left_arrow_button.grid(row=row+1, column= 3, columnspan=1, pady=35)
+    right_arrow_button.grid(row=row+1, column= 8, columnspan=1, pady=35)
+    restart_button.grid(row=row+1, column= 12, columnspan=1, pady=35)
+    play_button.grid(row=row+1, column= 12, columnspan=1, pady=35)
 
     restart_button.grid_forget()
 
@@ -493,7 +493,7 @@ arrows_image_height = 25
 restart_image_width = 35
 restart_image_height = 35
 
-button_fontsize = 25
+button_fontsize = 27
 hint_label_fontsize = 20
 timer_label_fontsize = 30
 score_label_fontsize = 15
@@ -506,8 +506,8 @@ restart_image = ImageTk.PhotoImage(Image.open("./assets/restart.png").resize((re
 play_button_image = ImageTk.PhotoImage(Image.open("./assets/right_arrow.png").resize((restart_image_width, restart_image_height)))
 
 
-column_val = 19
-row_val = 9
+column_val = int(round(part_size / 6))
+row_val = int((column_val - 1) / 2)
 
 column = min(column_val, screen_width // 50)
 row = min(row_val, screen_height // 50)
