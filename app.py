@@ -7,8 +7,9 @@ from PIL import Image, ImageTk
 import csv
 from datetime import timedelta
 
-#how many characters it can show at once
-part_size = 114
+#how many rows it can show at once
+rows_size = 4
+part_size = rows_size * 19
 hover_turned_on = True
 
 #utility functions
@@ -321,7 +322,6 @@ def character_button_clicked(char_index, i, j):
                 restart_clicked()
 
 # Add this function to update the kanji_label when a button is hovered over(turned off by default)
-# Add this function to update the kanji_label when a button is hovered over (turned off by default)
 def manual_color_update_on_hover(event, char_index):
     global current_hint_list_position
 
