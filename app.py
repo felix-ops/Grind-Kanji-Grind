@@ -9,7 +9,7 @@ import csv
 from datetime import timedelta
 
 #how characters rows it can show at once
-part_size = 78
+part_size = 80
 hover_turned_on = True
 
 #utility functions
