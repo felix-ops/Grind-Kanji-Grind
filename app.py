@@ -9,7 +9,7 @@ import csv
 from datetime import timedelta
 
 #how characters rows it can show at once
-part_size = 80
+part_size = 78
 hover_turned_on = True
 
 #utility functions
@@ -72,7 +72,7 @@ def create_character_buttons(character_list):
 def create_hint_label():
     global hint_label
     hint_label = Label(root, text="Click Any Kanji", font=("Bahnschrift", hint_label_fontsize),
-                    bg=bg_color, fg=fg_color, wraplength=500)
+                    bg=bg_color, fg=fg_color, wraplength=480)
     hint_label.grid(row=row+1, column=4, columnspan=4, pady=0)
 
 def create_kanji_label():
