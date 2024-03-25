@@ -2,8 +2,7 @@
 
 An Interactive Quiz based tool for learning Kanji Meanings
 
-
-![Screenshot 2024-03-26 001450](https://github.com/felix-ops/Grind-Kanji-Grind/assets/54519066/1e805e97-264f-4236-898e-6783aaa51116)
+![Screenshot 2024-03-26 001947](https://github.com/felix-ops/Grind-Kanji-Grind/assets/54519066/bfb51f01-8a6e-4482-96c4-654fd55071b2)
 
 ## Table of Contents
 
