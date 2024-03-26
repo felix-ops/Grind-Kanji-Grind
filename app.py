@@ -394,14 +394,17 @@ def right_arrow_clicked():
     global current_hint_list_position
     current_hint_list_position += 1
     current_hint_list_position %= len(current_hint_list)
+    
     if not is_timer_running:
         update_hint_label(current_hint_list[current_hint_list_position])
         update_kanji_label(current_kanji_list[current_hint_list_position])
         update_active_button()
     else:
-        while((quiz_order[current_hint_list_position] in solved_hint_list_positions) and not(len(solved_hint_list_positions) == len(current_hint_list))):
+        while (quiz_order[current_hint_list_position] in solved_hint_list_positions) and (len(solved_hint_list_positions) != len(current_hint_list)):
             current_hint_list_position += 1
+            current_hint_list_position %= len(current_hint_list)  # Ensure the position wraps around
         update_hint_label(current_hint_list[quiz_order[current_hint_list_position]])
+
 
 
 def update_active_button():
