@@ -344,7 +344,7 @@ def restart_clicked():
     global current_hint_list_position
 
     restart_button.grid_forget()
-    play_button.grid(row=row+1, column= 16, columnspan=1, pady=35)
+    play_button.grid(row=row+1, column= 12, columnspan=1, pady=35)
     shuffle_button.config(state=tkinter.NORMAL)
     level_dropdown.config(state="normal")
     part_dropdown.config(state="normal")
@@ -359,7 +359,7 @@ def play_clicked():
     global score
     global current_hint_list_position
     play_button.grid_forget()
-    restart_button.grid(row=row+1, column= 16, columnspan=1, pady=35)
+    restart_button.grid(row=row+1, column= 12, columnspan=1, pady=35)
     shuffle_button.config(state=tkinter.DISABLED)
     level_dropdown.config(state="disabled")
     part_dropdown.config(state="disabled")
