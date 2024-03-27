@@ -212,25 +212,29 @@ def randomize_level_clicked():
         randomized_hint_list = []
         randomized_kanji_list = []
 
-        for sublist in hint_lists[:level+1]:
-            if(hint_index < level):
-                for hint in sublist:
-                    randomized_hint_list.append(hint)
-            else:
-                for hint in sublist[:(part+1)*part_size]:
-                    randomized_hint_list.append(hint)
-            hint_index += 1
+        if current_level == "RTK":
+            # If the selected level is RTK, only include the RTK level
+            randomized_hint_list = hint_lists[level][:(part+1)*part_size]
+            randomized_kanji_list = kanji_lists[level][:(part+1)*part_size]
+        else:
+            # If the selected level is not RTK, include all previous levels
+            for sublist in hint_lists[:level+1]:
+                if hint_index < level:
+                    for hint in sublist:
+                        randomized_hint_list.append(hint)
+                else:
+                    for hint in sublist[:(part+1)*part_size]:
+                        randomized_hint_list.append(hint)
+                hint_index += 1
 
-        for sublist in kanji_lists[:level+1]:
-            if(kanji_index < level):
-                for kanji in sublist:
-                    randomized_kanji_list.append(kanji)
-            else:
-                for kanji in sublist[:(part+1)*part_size]:
-                    randomized_kanji_list.append(kanji)
-            kanji_index += 1
-
-
+            for sublist in kanji_lists[:level+1]:
+                if kanji_index < level:
+                    for kanji in sublist:
+                        randomized_kanji_list.append(kanji)
+                else:
+                    for kanji in sublist[:(part+1)*part_size]:
+                        randomized_kanji_list.append(kanji)
+                kanji_index += 1
 
         merged_list = list(zip(randomized_kanji_list, randomized_hint_list))
         random.shuffle(merged_list)
@@ -244,7 +248,6 @@ def randomize_level_clicked():
     else:
         set_level()
         set_part()
-
 
 #command functions
 def set_level(event=None):
@@ -448,9 +451,7 @@ def timer_finished():
 
 is_timer_running = False
 timer_value = 900 
-
-
-total_levels = 5
+total_levels = 6
 kanji_lists = [[] for _ in range(total_levels)]
 hint_lists = [[] for _ in range(total_levels)]
 kanji_file_paths = [[] for _ in range(total_levels)]
@@ -463,6 +464,8 @@ kanji_file_paths[1] = "./data/JLPT_N4.csv"
 kanji_file_paths[2] = "./data/JLPT_N3.csv"
 kanji_file_paths[3] = "./data/JLPT_N2.csv"
 kanji_file_paths[4] = "./data/JLPT_N1.csv"
+kanji_file_paths[5] = "./data/RTK_5ED.csv"
+# kanji_file_paths[5] = "./data/RTK_6ED.csv"
 
 for i in range(total_levels):
     fetch_data_from_csv(kanji_lists[i], hint_lists[i], kanji_file_paths[i])
@@ -517,7 +520,7 @@ row = min(row_val, screen_height // 50)
 
 buttons_list = [[0]*column for _ in range(row)]
 
-levels = ["JLPT N5", "JLPT N4", "JLPT N3", "JLPT N2", "JLPT N1"]
+levels = ["JLPT N5", "JLPT N4", "JLPT N3", "JLPT N2", "JLPT N1", "RTK"]
 parts = []
 
 for i in range(total_levels):
