@@ -1,0 +1,6 @@
+{
+    "ANKI_CONNECT_URL": "http://localhost:8765",
+    "DECK_NAME": "アニメ",
+    "FIELD_NAME": "Expression",
+    "CSV_FILE_NAME": "data/ANKI.csv"
+}

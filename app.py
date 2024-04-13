@@ -451,7 +451,7 @@ def timer_finished():
 
 is_timer_running = False
 timer_value = 900 
-total_levels = 6
+total_levels = 9
 kanji_lists = [[] for _ in range(total_levels)]
 hint_lists = [[] for _ in range(total_levels)]
 kanji_file_paths = [[] for _ in range(total_levels)]
@@ -465,7 +465,9 @@ kanji_file_paths[2] = "./data/JLPT_N3.csv"
 kanji_file_paths[3] = "./data/JLPT_N2.csv"
 kanji_file_paths[4] = "./data/JLPT_N1.csv"
 kanji_file_paths[5] = "./data/RTK_5ED.csv"
-# kanji_file_paths[5] = "./data/RTK_6ED.csv"
+kanji_file_paths[6] = "./data/RTK_6ED.csv"
+kanji_file_paths[7] = "./data/ANKI.csv"
+kanji_file_paths[8] = "./data/CUSTOM.csv"
 
 for i in range(total_levels):
     fetch_data_from_csv(kanji_lists[i], hint_lists[i], kanji_file_paths[i])
@@ -520,7 +522,7 @@ row = min(row_val, screen_height // 50)
 
 buttons_list = [[0]*column for _ in range(row)]
 
-levels = ["JLPT N5", "JLPT N4", "JLPT N3", "JLPT N2", "JLPT N1", "RTK"]
+levels = ["JLPT N5", "JLPT N4", "JLPT N3", "JLPT N2", "JLPT N1", "RTK 5th Edition", "RTK 6th Edition", "Anki", "Custom"]
 parts = []
 
 for i in range(total_levels):

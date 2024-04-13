@@ -1,28 +1,30 @@
+
+
+# def get_kanji_meaning_jisho(kanji):
+#     url = f'https://jisho.org/api/v1/search/words?keyword={kanji}'
+#     response = requests.get(url)
+#     data = response.json()
+#     if 'data' in data and data['data']:
+#         return data['data'][0]['senses'][0]['english_definitions'][0]
+#     else:
+#         return 'Meaning not found'
+    
+# def get_kanji_meaning_wanikani(kanji):
+#     url = f'https://api.wanikani.com/v2/subjects?types=kanji&slugs={kanji}'
+#     headers = {'Authorization': f'Bearer {wani_kani_api}'}
+#     response = requests.get(url, headers=headers)
+
+#     if response.status_code == 200:
+#         data = response.json()
+#         if 'data' in data and data['data']:
+#             return data['data'][0]['data']['meanings'][0]['meaning']
+    
+#     return 'Meaning not found'
+
 import csv
 import time
 import requests
 import os
-
-def get_kanji_meaning_jisho(kanji):
-    url = f'https://jisho.org/api/v1/search/words?keyword={kanji}'
-    response = requests.get(url)
-    data = response.json()
-    if 'data' in data and data['data']:
-        return data['data'][0]['senses'][0]['english_definitions'][0]
-    else:
-        return 'Meaning not found'
-    
-def get_kanji_meaning_wanikani(kanji):
-    url = f'https://api.wanikani.com/v2/subjects?types=kanji&slugs={kanji}'
-    headers = {'Authorization': f'Bearer {wani_kani_api}'}
-    response = requests.get(url, headers=headers)
-
-    if response.status_code == 200:
-        data = response.json()
-        if 'data' in data and data['data']:
-            return data['data'][0]['data']['meanings'][0]['meaning']
-    
-    return 'Meaning not found'
 
 def get_kanji_meaning_kanjiapi(kanji):
     url = 'https://kanjiapi.dev/v1/kanji/' + str(kanji)
@@ -35,8 +37,6 @@ def get_kanji_meaning_kanjiapi(kanji):
                 return ', '.join(data['meanings'])
             
         time.sleep(3) 
-        
-
     return 'Meaning not found'
 
 
@@ -73,8 +73,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 filePaths = [[] for _ in range(file_count)]
 output_names = [[] for _ in range(file_count)]
 
-wani_kani_api = "0e4738a0-75ca-428c-8329-4d2577519524"
-
+# wani_kani_api = "0e4738a0-75ca-428c-8329-4d2577519524"
 # print(get_kanji_meaning_kanjiapi("壌"))
 
 for i in range(file_count):
