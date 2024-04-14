@@ -4,6 +4,7 @@ import requests
 import re
 import os
 import json
+from collections import OrderedDict
 
 # Load the configuration from the JSON file
 config_file = 'anki_sync_config.json'
@@ -14,17 +15,18 @@ else:
     raise FileNotFoundError(f"Configuration file '{config_file}' not found.")
 
 # Set the configuration variables
-ANKI_CONNECT_URL = config['ANKI_CONNECT_URL']
 DECK_NAME = config['DECK_NAME']
 FIELD_NAME = config['FIELD_NAME']
 CSV_FILE_NAME = config['CSV_FILE_NAME']
+ANKI_CONNECT_URL = config['ANKI_CONNECT_URL']
+ANKI_CONNECT_VERSION = config['ANKI_CONNECT_VERSION']
 
 newKanjiCount = 0
 
 def get_new_notes():
     data = {
         "action": "findNotes",
-        "version": 6,
+        "version": ANKI_CONNECT_VERSION,
         "params": {
             "query": f"deck:{DECK_NAME}"
         }
@@ -36,7 +38,7 @@ def get_new_notes():
 def get_note_fields(note_ids):
     data = {
         "action": "notesInfo",
-        "version": 6,
+        "version": ANKI_CONNECT_VERSION,
         "params": {
             "notes": note_ids
         }
@@ -46,11 +48,14 @@ def get_note_fields(note_ids):
     note_infos = response.json()["result"]
     return [note_info["fields"][FIELD_NAME]["value"] for note_info in note_infos]
 
+
+
 def extract_kanji(texts):
-    kanji_set = set()
+    kanji_dict = OrderedDict()
     for text in texts:
-        kanji_set.update(re.findall(r'[\u4e00-\u9fff]', text))
-    return list(kanji_set)
+        for kanji in re.findall(r'[\u4e00-\u9fff]', text):
+            kanji_dict[kanji] = None
+    return list(kanji_dict.keys())
 
 def fetch_kanji_meaning(kanji):
     print(f"Fetching meaning for {kanji}")
