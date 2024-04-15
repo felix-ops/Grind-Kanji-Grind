@@ -16,8 +16,9 @@ else:
 
 # Set the configuration variables
 DECK_NAME = config['DECK_NAME']
-FIELD_NAME = config['FIELD_NAME']
+FIELD_NAMES = config['FIELD_NAMES']
 CSV_FILE_NAME = config['CSV_FILE_NAME']
+JSON_FILE_NAME = config['JSON_FILE_NAME']
 ANKI_CONNECT_URL = config['ANKI_CONNECT_URL']
 ANKI_CONNECT_VERSION = config['ANKI_CONNECT_VERSION']
 
@@ -46,23 +47,62 @@ def get_note_fields(note_ids):
     response = requests.post(ANKI_CONNECT_URL, json=data)
     response.raise_for_status()
     note_infos = response.json()["result"]
-    return [note_info["fields"][FIELD_NAME]["value"] for note_info in note_infos]
-
-
+    all_expressions = []
+    for note_info in note_infos:
+        note_expressions = []
+        for field_name in FIELD_NAMES:
+            note_expressions.append(note_info["fields"][field_name]["value"])
+        all_expressions.append(note_expressions)
+    return all_expressions
 
 def extract_kanji(texts):
     kanji_dict = OrderedDict()
-    for text in texts:
-        for kanji in re.findall(r'[\u4e00-\u9fff]', text):
-            kanji_dict[kanji] = None
+    for text_list in texts:
+        for text in text_list:
+            for kanji in re.findall(r'[\u4e00-\u9fff]', text):
+                kanji_dict[kanji] = None
     return list(kanji_dict.keys())
 
 def fetch_kanji_meaning(kanji):
     print(f"Fetching meaning for {kanji}")
-    url = 'https://kanjiapi.dev/v1/kanji/' + str(kanji)
+    meaning = get_meaning_from_files(kanji)
+    if meaning is None:
+        meaning = fetch_meaning_from_api(kanji)
+    return meaning
 
+def get_meaning_from_files(kanji):
+    # Check CSV file
+    csv_meaning = get_meaning_from_csv(kanji)
+    if csv_meaning is not None:
+        return csv_meaning
+
+    # Check JSON file
+    json_meaning = get_meaning_from_json(kanji)
+    if json_meaning is not None:
+        return json_meaning
+
+    return None
+
+def get_meaning_from_csv(kanji):
+    if os.path.isfile(CSV_FILE_NAME):
+        with open(CSV_FILE_NAME, "r", newline="", encoding="utf-8") as csvfile:
+            reader = csv.reader(csvfile)
+            for row in reader:
+                if row[0] == kanji:
+                    return row[1]
+    return None
+
+def get_meaning_from_json(kanji):
+    if os.path.isfile(JSON_FILE_NAME):
+        with open(JSON_FILE_NAME, "r", encoding="utf-8") as jsonfile:
+            data = json.load(jsonfile)
+            if kanji in data:
+                return data[kanji]
+    return None
+
+def fetch_meaning_from_api(kanji):
     for _ in range(5):
-        response = requests.get(url)
+        response = requests.get(f'https://kanjiapi.dev/v1/kanji/{kanji}')
         if response.status_code == 200:
             data = response.json()
             if 'meanings' in data:
@@ -70,7 +110,7 @@ def fetch_kanji_meaning(kanji):
                 print(f"Meaning founded: {meaning}")
                 return meaning
         print('Meaning not found retrying...')
-        time.sleep(3) 
+        time.sleep(3)
     return 'Meaning not found'
 
 def save_to_csv(kanji_list):
@@ -84,7 +124,6 @@ def save_to_csv(kanji_list):
 
     new_kanji = [kanji for kanji in kanji_list if kanji not in existing_kanji]
     newKanjiCount = len(new_kanji)
-
     print(f"{newKanjiCount} new kanjis found")
 
     with open(CSV_FILE_NAME, "a", newline="", encoding="utf-8") as csvfile:
@@ -93,14 +132,23 @@ def save_to_csv(kanji_list):
             meaning = fetch_kanji_meaning(kanji)
             writer.writerow([kanji, meaning])
 
+def save_to_json(kanji_list):
+    data = {}
+    for kanji in kanji_list:
+        meaning = fetch_kanji_meaning(kanji)
+        data[kanji] = meaning
+
+    with open(JSON_FILE_NAME, "w", encoding="utf-8") as jsonfile:
+        json.dump(data, jsonfile, ensure_ascii=False, indent=4)
+
 def main():
-    print(f"Extracting kanjis from | Deck: {DECK_NAME} | Field: {FIELD_NAME} |")
+    print(f"Extracting kanjis from | Deck: {DECK_NAME} | Fields: {', '.join(FIELD_NAMES)} |")
     new_note_ids = get_new_notes()
     expressions = get_note_fields(new_note_ids)
     kanji_list = extract_kanji(expressions)
     save_to_csv(kanji_list)
-
-    print(f"{newKanjiCount} new kanjis updated on {CSV_FILE_NAME}")
+    save_to_json(kanji_list)
+    print(f"{newKanjiCount} new kanjis updated on {CSV_FILE_NAME} and {JSON_FILE_NAME}")
     input("Press Any Key to Exit...")
 
 if __name__ == "__main__":
