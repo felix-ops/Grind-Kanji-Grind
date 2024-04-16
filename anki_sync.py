@@ -78,12 +78,12 @@ def get_meaning_from_files(kanji):
 
     if csv_meaning is not None:
         if json_meaning == None:        
-            print(f"Fetching meaning from CSV => JSON: {kanji}")
+            print(f"Syncing meaning from CSV => JSON: {kanji}")
         return csv_meaning
 
     if json_meaning is not None:
         if csv_meaning == None:
-            print(f"Fetching meaning from JSON => CSV: {kanji}")
+            print(f"Syncing meaning from JSON => CSV: {kanji}")
         return json_meaning
 
     return None
@@ -155,7 +155,8 @@ def main():
         kanji_list = extract_kanji(expressions)
         save_to_csv(kanji_list)
         save_to_json(kanji_list)
-        print(f"{newKanjiCount} new kanjis updated on {CSV_FILE_NAME} and {JSON_FILE_NAME}")
+        print(f"{newKanjiCount} new kanjis updated from web")
+        print(f"Kanji meanings synced between {CSV_FILE_NAME} and {JSON_FILE_NAME}")
     except requests.exceptions.RequestException as e:
         print("Error connecting to Anki Connect:", e)
     input("Press Any Key to Exit...")
