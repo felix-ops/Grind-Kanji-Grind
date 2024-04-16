@@ -17,8 +17,8 @@ else:
 # Set the configuration variables
 DECK_NAME = config['DECK_NAME']
 FIELD_NAMES = config['FIELD_NAMES']
-CSV_FILE_NAME = config['CSV_FILE_NAME']
-JSON_FILE_NAME = config['JSON_FILE_NAME']
+CSV_FILE_NAME = config['CSV_FILE_PATH']
+JSON_FILE_NAME = config['ANKI_MEDIACOLLECTION_PATH']
 ANKI_CONNECT_URL = config['ANKI_CONNECT_URL']
 ANKI_CONNECT_VERSION = config['ANKI_CONNECT_VERSION']
 
@@ -64,7 +64,6 @@ def extract_kanji(texts):
     return list(kanji_dict.keys())
 
 def fetch_kanji_meaning(kanji):
-    print(f"Fetching meaning for {kanji}")
     meaning = get_meaning_from_files(kanji)
     if meaning is None:
         meaning = fetch_meaning_from_api(kanji)
@@ -73,12 +72,18 @@ def fetch_kanji_meaning(kanji):
 def get_meaning_from_files(kanji):
     # Check CSV file
     csv_meaning = get_meaning_from_csv(kanji)
-    if csv_meaning is not None:
-        return csv_meaning
-
     # Check JSON file
     json_meaning = get_meaning_from_json(kanji)
+
+
+    if csv_meaning is not None:
+        if json_meaning == None:        
+            print(f"Fetching meaning from CSV => JSON: {kanji}")
+        return csv_meaning
+
     if json_meaning is not None:
+        if csv_meaning == None:
+            print(f"Fetching meaning from JSON => CSV: {kanji}")
         return json_meaning
 
     return None
@@ -101,6 +106,7 @@ def get_meaning_from_json(kanji):
     return None
 
 def fetch_meaning_from_api(kanji):
+    print(f"Fetching meaning from web: {kanji}")
     for _ in range(5):
         response = requests.get(f'https://kanjiapi.dev/v1/kanji/{kanji}')
         if response.status_code == 200:
@@ -143,13 +149,17 @@ def save_to_json(kanji_list):
 
 def main():
     print(f"Extracting kanjis from | Deck: {DECK_NAME} | Fields: {', '.join(FIELD_NAMES)} |")
-    new_note_ids = get_new_notes()
-    expressions = get_note_fields(new_note_ids)
-    kanji_list = extract_kanji(expressions)
-    save_to_csv(kanji_list)
-    save_to_json(kanji_list)
-    print(f"{newKanjiCount} new kanjis updated on {CSV_FILE_NAME} and {JSON_FILE_NAME}")
+    try:
+        new_note_ids = get_new_notes()
+        expressions = get_note_fields(new_note_ids)
+        kanji_list = extract_kanji(expressions)
+        save_to_csv(kanji_list)
+        save_to_json(kanji_list)
+        print(f"{newKanjiCount} new kanjis updated on {CSV_FILE_NAME} and {JSON_FILE_NAME}")
+    except requests.exceptions.RequestException as e:
+        print("Error connecting to Anki Connect:", e)
     input("Press Any Key to Exit...")
+
 
 if __name__ == "__main__":
     main()
