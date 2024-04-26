@@ -2,7 +2,6 @@
     "DECK_NAME": "アニメ",
     "FIELD_NAMES": ["Context","Expression"],
     "CSV_FILE_PATH": "data/ANKI.csv",
-    "ANKI_MEDIACOLLECTION_PATH": "C:/Users/Bhuvaneshwaran M/AppData/Roaming/Anki2/User 1/collection.media/_kanji_meanings.json",
     "ANKI_CONNECT_URL": "http://localhost:8765",
     "ANKI_CONNECT_VERSION": 6
 }

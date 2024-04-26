@@ -18,7 +18,6 @@ else:
 DECK_NAME = config['DECK_NAME']
 FIELD_NAMES = config['FIELD_NAMES']
 CSV_FILE_NAME = config['CSV_FILE_PATH']
-JSON_FILE_NAME = config['ANKI_MEDIACOLLECTION_PATH']
 ANKI_CONNECT_URL = config['ANKI_CONNECT_URL']
 ANKI_CONNECT_VERSION = config['ANKI_CONNECT_VERSION']
 
@@ -64,46 +63,8 @@ def extract_kanji(texts):
     return list(kanji_dict.keys())
 
 def fetch_kanji_meaning(kanji):
-    meaning = get_meaning_from_files(kanji)
-    if meaning is None:
-        meaning = fetch_meaning_from_api(kanji)
+    meaning = fetch_meaning_from_api(kanji)
     return meaning
-
-def get_meaning_from_files(kanji):
-    # Check CSV file
-    csv_meaning = get_meaning_from_csv(kanji)
-    # Check JSON file
-    json_meaning = get_meaning_from_json(kanji)
-
-
-    if csv_meaning is not None:
-        if json_meaning == None:        
-            print(f"Syncing meaning from CSV => JSON: {kanji}")
-        return csv_meaning
-
-    if json_meaning is not None:
-        if csv_meaning == None:
-            print(f"Syncing meaning from JSON => CSV: {kanji}")
-        return json_meaning
-
-    return None
-
-def get_meaning_from_csv(kanji):
-    if os.path.isfile(CSV_FILE_NAME):
-        with open(CSV_FILE_NAME, "r", newline="", encoding="utf-8") as csvfile:
-            reader = csv.reader(csvfile)
-            for row in reader:
-                if row[0] == kanji:
-                    return row[1]
-    return None
-
-def get_meaning_from_json(kanji):
-    if os.path.isfile(JSON_FILE_NAME):
-        with open(JSON_FILE_NAME, "r", encoding="utf-8") as jsonfile:
-            data = json.load(jsonfile)
-            if kanji in data:
-                return data[kanji]
-    return None
 
 def fetch_meaning_from_api(kanji):
     print(f"Fetching meaning from web: {kanji}")
@@ -138,14 +99,6 @@ def save_to_csv(kanji_list):
             meaning = fetch_kanji_meaning(kanji)
             writer.writerow([kanji, meaning])
 
-def save_to_json(kanji_list):
-    data = {}
-    for kanji in kanji_list:
-        meaning = fetch_kanji_meaning(kanji)
-        data[kanji] = meaning
-
-    with open(JSON_FILE_NAME, "w", encoding="utf-8") as jsonfile:
-        json.dump(data, jsonfile, ensure_ascii=False, indent=4)
 
 def main():
     print(f"Extracting kanjis from | Deck: {DECK_NAME} | Fields: {', '.join(FIELD_NAMES)} |")
@@ -154,9 +107,7 @@ def main():
         expressions = get_note_fields(new_note_ids)
         kanji_list = extract_kanji(expressions)
         save_to_csv(kanji_list)
-        save_to_json(kanji_list)
-        print(f"{newKanjiCount} new kanjis updated from web")
-        print(f"Kanji meanings synced between {CSV_FILE_NAME} and {JSON_FILE_NAME}")
+        print(f"{newKanjiCount} new kanjis updated on {CSV_FILE_NAME}")
     except requests.exceptions.RequestException as e:
         print("Error connecting to Anki Connect:", e)
     input("Press Any Key to Exit...")
