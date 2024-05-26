@@ -24,15 +24,17 @@ ANKI_CONNECT_VERSION = config['ANKI_CONNECT_VERSION']
 newKanjiCount = 0
 
 def get_new_notes():
+    deck_name_encoded = DECK_NAME.encode('utf-8')  # Encode the deck name as UTF-8
     data = {
         "action": "findNotes",
         "version": ANKI_CONNECT_VERSION,
         "params": {
-            "query": f"deck:{DECK_NAME}"
+             "query": f'deck:"{deck_name_encoded.decode("utf-8")}"' 
         }
     }
     response = requests.post(ANKI_CONNECT_URL, json=data)
     response.raise_for_status()
+
     return response.json()["result"]
 
 def get_note_fields(note_ids):

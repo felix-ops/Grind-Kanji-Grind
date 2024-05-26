@@ -1,5 +1,5 @@
 {
-    "DECK_NAME": "アニメ",
+    "DECK_NAME": "アニメ Vocab",
     "FIELD_NAMES": ["Context","Expression"],
     "CSV_FILE_PATH": "data/ANKI.csv",
     "ANKI_CONNECT_URL": "http://localhost:8765",
